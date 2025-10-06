@@ -6,6 +6,9 @@ import Footer from './components/Footer';
 import LiveSupportWidget from './components/LiveSupportWidget';
 import HomePage from './pages/HomePage';
 import AboutUsPage from './components/AboutUsPage';
+import TermsOfServicePage from './pages/TermsOfServicePage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import CookiePolicyPage from './pages/CookiePolicyPage';
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/hakkimizda" element={<AboutUsPage />} />
+            <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/cookie-policy" element={<CookiePolicyPage />} />
           </Routes>
           <Footer />
           <LiveSupportWidget />

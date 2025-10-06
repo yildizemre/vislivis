@@ -1,9 +1,10 @@
-import React from 'react';
-import { BarChart3, TrendingUp, Brain, Cloud, Calendar, Target } from 'lucide-react';
+import React, { useState } from 'react';
+import { BarChart3, TrendingUp, Brain, Cloud, Calendar, Target, X } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const AnalyticsDashboardSection = () => {
   const { t } = useLanguage();
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const analyticsFeatures = [
     {
@@ -56,7 +57,10 @@ const AnalyticsDashboardSection = () => {
         <div className="max-w-7xl mx-auto">
           {/* Dashboard Preview Images */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <div className="group relative overflow-hidden rounded-2xl border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500">
+            <div
+              className="group relative overflow-hidden rounded-2xl border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
+              onClick={() => setSelectedImage("/WhatsApp Image 2025-09-30 at 19.55.04.jpeg")}
+            >
               <img
                 src="/WhatsApp Image 2025-09-30 at 19.55.04.jpeg"
                 alt="Vislivis Dashboard Analytics"
@@ -64,7 +68,10 @@ const AnalyticsDashboardSection = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
-            <div className="group relative overflow-hidden rounded-2xl border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500">
+            <div
+              className="group relative overflow-hidden rounded-2xl border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
+              onClick={() => setSelectedImage("/6ae33b02-9b6c-47e2-a179-efe3f156a607.jpg")}
+            >
               <img
                 src="/6ae33b02-9b6c-47e2-a179-efe3f156a607.jpg"
                 alt="Vislivis Real-time Monitoring"
@@ -99,9 +106,9 @@ const AnalyticsDashboardSection = () => {
                       {feature.title}
                     </h3>
 
-                    <p className="text-gray-600 leading-relaxed font-light">
+                    <div className="text-gray-600 leading-relaxed font-light whitespace-pre-line">
                       {feature.description}
-                    </p>
+                    </div>
                   </div>
                 </div>
               );
@@ -110,6 +117,27 @@ const AnalyticsDashboardSection = () => {
 
         </div>
       </div>
+
+      {/* Image Modal/Lightbox */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 animate-fade-in"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            className="absolute top-4 right-4 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors duration-300"
+            onClick={() => setSelectedImage(null)}
+          >
+            <X className="w-6 h-6 text-white" />
+          </button>
+          <img
+            src={selectedImage}
+            alt="Dashboard Preview"
+            className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </section>
   );
 };

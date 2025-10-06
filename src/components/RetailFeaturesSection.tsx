@@ -78,9 +78,9 @@ const RetailFeaturesSection = () => {
                     {feature.title}
                   </h3>
 
-                  <p className="text-gray-600 font-light leading-relaxed">
+                  <div className="text-gray-600 font-light leading-relaxed whitespace-pre-line">
                     {feature.description}
-                  </p>
+                  </div>
                 </div>
               );
             })}

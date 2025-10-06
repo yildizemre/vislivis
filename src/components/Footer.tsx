@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ExternalLink } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -6,24 +7,24 @@ const Footer = () => {
   const { t } = useLanguage();
 
   const productLinks = [
-    { name: 'Home Security', href: '#' },
-    { name: 'Commercial Security', href: '#' },
-    { name: 'Industrial Monitoring', href: '#' },
-    { name: 'AI Analytics', href: '#' }
+    { key: 'footer.products.queue', href: '#features' },
+    { key: 'footer.products.cashier', href: '#features' },
+    { key: 'footer.products.behavior', href: '#features' },
+    { key: 'footer.products.heatmap', href: '#features' }
   ];
 
   const supportLinks = [
-    { name: 'Documentation', href: '#' },
-    { name: 'Support Center', href: '#' },
-    { name: 'Contact', href: '#contact' },
-    { name: 'System Status', href: '#' }
+    { key: 'footer.support.docs', href: '#' },
+    { key: 'footer.support.center', href: '#' },
+    { key: 'footer.support.contact', href: '#contact' },
+    { key: 'footer.support.status', href: '#' }
   ];
 
   const companyLinks = [
-    { name: 'About Us', href: '#' },
-    { name: 'Careers', href: '#' },
-    { name: 'News', href: '#' },
-    { name: 'Privacy Policy', href: '#' }
+    { key: 'footer.company.about', href: '/hakkimizda', internal: true },
+    { key: 'footer.company.careers', href: '#' },
+    { key: 'footer.company.blog', href: '#' },
+    { key: 'footer.company.partners', href: '#' }
   ];
 
   return (
@@ -65,10 +66,9 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group font-medium"
+                    className="text-gray-400 hover:text-white transition-colors duration-300 font-medium"
                   >
-                    <span>{link.name}</span>
-                    <ExternalLink className="w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    {t(link.key)}
                   </a>
                 </li>
               ))}
@@ -82,10 +82,9 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group font-medium"
+                    className="text-gray-400 hover:text-white transition-colors duration-300 font-medium"
                   >
-                    <span>{link.name}</span>
-                    <ExternalLink className="w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    {t(link.key)}
                   </a>
                 </li>
               ))}
@@ -97,13 +96,21 @@ const Footer = () => {
             <ul className="space-y-4">
               {companyLinks.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group font-medium"
-                  >
-                    <span>{link.name}</span>
-                    <ExternalLink className="w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
+                  {link.internal ? (
+                    <Link
+                      to={link.href}
+                      className="text-gray-400 hover:text-white transition-colors duration-300 font-medium"
+                    >
+                      {t(link.key)}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-gray-400 hover:text-white transition-colors duration-300 font-medium"
+                    >
+                      {t(link.key)}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -117,15 +124,15 @@ const Footer = () => {
             </div>
             
             <div className="flex space-x-8 text-sm font-medium">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Cookie Policy
-              </a>
+              <Link to="/terms-of-service" className="text-gray-400 hover:text-white transition-colors">
+                {t('terms.title')}
+              </Link>
+              <Link to="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">
+                {t('privacy.title')}
+              </Link>
+              <Link to="/cookie-policy" className="text-gray-400 hover:text-white transition-colors">
+                {t('cookie.title')}
+              </Link>
             </div>
           </div>
         </div>
