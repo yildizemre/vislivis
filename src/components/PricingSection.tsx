@@ -149,11 +149,19 @@ const PricingSection = () => {
                   </div>
 
                   {/* CTA Button */}
-                  <button className={`w-full py-4 px-6 font-semibold rounded-xl transition-all duration-300 ${
-                    plan.popular
-                      ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
-                      : 'bg-gray-900 text-white hover:bg-gray-800 shadow-md hover:shadow-lg'
-                  }`}>
+                  <button
+                    onClick={() => {
+                      const element = document.getElementById('contact');
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
+                    className={`w-full py-4 px-6 font-semibold rounded-xl transition-all duration-300 ${
+                      plan.popular
+                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
+                        : 'bg-gray-900 text-white hover:bg-gray-800 shadow-md hover:shadow-lg'
+                    }`}
+                  >
                     {plan.buttonText}
                   </button>
                 </div>

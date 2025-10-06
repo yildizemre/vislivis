@@ -169,7 +169,15 @@ const MobileSection = () => {
                     </div>
                   </div>
                   
-                  <button className="inline-flex items-center px-6 py-3 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-colors duration-300">
+                  <button
+                    onClick={() => {
+                      const element = document.getElementById('contact');
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
+                    className="inline-flex items-center px-6 py-3 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-colors duration-300"
+                  >
                     <Download className="w-5 h-5 mr-2" />
                     {t('mobile.distribution.button')}
                   </button>

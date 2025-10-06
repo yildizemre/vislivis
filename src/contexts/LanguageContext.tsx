@@ -89,17 +89,17 @@ const translations = {
     'analytics.comparison.title': 'Period Comparison & Change Tracking',
     'analytics.comparison.description': 'Track KPI changes with percentage indicators (▲ %8 or ▼ %5). Compare performance vs. previous day, same day last week, and same day last year for comprehensive trend analysis.',
 
-    'analytics.products.title': 'Product Analytics',
-    'analytics.products.description': 'Track most tried products and conversion rates',
+    'analytics.products.title': 'Product Analytics & Performance Tracking',
+    'analytics.products.description': 'Comprehensive product interaction analysis system tracks customer engagement patterns, trial behaviors, and conversion metrics across all product categories. Identify top-performing SKUs, measure product dwell time, analyze interaction frequency, and optimize product placement strategies based on data-driven insights. Monitor conversion funnels from product interaction to purchase completion, enabling precise inventory forecasting and merchandising optimization.',
 
-    'analytics.kpi.title': 'KPI & Sales Conversion',
-    'analytics.kpi.description': 'Monitor key performance indicators and sales conversion metrics',
+    'analytics.kpi.title': 'KPI Dashboard & Sales Conversion Analytics',
+    'analytics.kpi.description': 'Enterprise-grade performance monitoring system delivering real-time visibility into critical business metrics. Track conversion rates, average transaction values, basket size analysis, and customer acquisition costs with precision. Benchmark performance against historical data, industry standards, and custom targets. Advanced segmentation capabilities enable granular analysis by time period, product category, customer demographic, and store location, empowering strategic decision-making with comprehensive performance intelligence.',
 
-    'analytics.weather.title': 'Weather Integration',
-    'analytics.weather.description': '15-day weather forecast integration with automated alerts for adverse conditions',
+    'analytics.weather.title': 'Weather Intelligence & Predictive Planning',
+    'analytics.weather.description': 'Advanced meteorological integration system provides 15-day forecasting with sophisticated correlation analysis between weather patterns and retail performance. Automated alert mechanisms notify management of adverse conditions that may impact foot traffic, enabling proactive staffing adjustments and inventory positioning. Historical weather-performance correlation analysis reveals seasonal patterns and weather-sensitive product opportunities, optimizing promotional timing and resource allocation based on anticipated environmental conditions.',
 
-    'analytics.ai.title': 'AI Recommendations',
-    'analytics.ai.description': 'Natural language interpretation of historical data with actionable insights',
+    'analytics.ai.title': 'AI-Powered Predictive Intelligence & Recommendations',
+    'analytics.ai.description': 'Sophisticated machine learning engine analyzes comprehensive historical datasets to generate actionable business intelligence through natural language processing. Advanced algorithms identify hidden patterns, predict future trends, and recommend optimal strategies for inventory management, staffing allocation, and promotional planning. Contextual insights consider multiple variables including seasonal patterns, customer behavior shifts, competitive dynamics, and market conditions, delivering prescriptive recommendations that drive measurable performance improvements and strategic advantage.',
 
     'analytics.metrics.trafficIncrease': 'Daily Traffic Increase',
     'analytics.metrics.processing': 'Real-time Processing',
@@ -405,17 +405,17 @@ const translations = {
     'analytics.comparison.title': 'Dönem Karşılaştırması ve Değişim Takibi',
     'analytics.comparison.description': 'KPI kartlarında yüzdelik değişim göstergeleri ile takip edin (▲ %8 veya ▼ %5). Önceki güne, geçen haftanın aynı gününe ve geçen yılın aynı gününe göre kapsamlı trend analizi yapın.',
     
-    'analytics.products.title': 'Ürün Analitik',
-    'analytics.products.description': 'En çok denenen ürünleri ve dönüşüm oranlarını takip edin',
+    'analytics.products.title': 'Ürün Analitiği ve Performans Takibi',
+    'analytics.products.description': 'Kapsamlı ürün etkileşim analiz sistemi, müşteri etkileşim paternlerini, deneme davranışlarını ve tüm ürün kategorilerindeki dönüşüm metriklerini izler. En yüksek performanslı SKU\'ları tespit edin, ürün başında geçirilen süreyi ölçümleyin, etkileşim sıklığını analiz edin ve veri odaklı içgörüler doğrultusunda ürün yerleşim stratejilerini optimize edin. Ürün etkileşiminden satın alma tamamlanmasına kadar dönüşüm hunilerini izleyerek, hassas envanter tahmini ve merchandising optimizasyonu sağlayın.',
     
-    'analytics.kpi.title': 'KPI ve Satış Dönüşümü',
-    'analytics.kpi.description': 'Anahtar performans göstergelerini ve satış dönüşüm metriklerini izleyin',
+    'analytics.kpi.title': 'KPI Paneli ve Satış Dönüşüm Analitiği',
+    'analytics.kpi.description': 'Kurumsal sınıf performans izleme sistemi, kritik iş metriklerine gerçek zamanlı görünürlük sağlar. Dönüşüm oranlarını, ortalama işlem değerlerini, sepet büyüklüğü analizini ve müşteri edinim maliyetlerini hassasiyetle takip edin. Performansı geçmiş verilerle, sektör standartlarıyla ve özel hedeflerle kıyaslayarak değerlendirin. Gelişmiş segmentasyon yetenekleri, zaman periyodu, ürün kategorisi, müşteri demografisi ve mağaza lokasyonuna göre granular analiz imkanı sunarak, kapsamlı performans istihbaratı ile stratejik karar almayı güçlendirir.',
     
-    'analytics.weather.title': 'Hava Durumu Entegrasyonu',
-    'analytics.weather.description': '15 günlük hava durumu tahmini entegrasyonu ve olumsuz koşullar için otomatik uyarılar',
+    'analytics.weather.title': 'Hava Durumu İstihbaratı ve Tahmine Dayalı Planlama',
+    'analytics.weather.description': 'Gelişmiş meteorolojik entegrasyon sistemi, 15 günlük tahmin ile hava paternleri ve perakende performansı arasında sofistike korelasyon analizi sağlar. Otomatik uyarı mekanizmaları, ayak trafiğini etkileyebilecek olumsuz koşulları yönetime bildirir ve proaktif personel ayarlamaları ile envanter konumlandırması sağlar. Geçmiş hava-performans korelasyon analizi, mevsimsel paternleri ve havaya duyarlı ürün fırsatlarını ortaya çıkararak, beklenen çevresel koşullara dayalı promosyon zamanlamalarını ve kaynak tahsisini optimize eder.',
     
-    'analytics.ai.title': 'AI Önerileri',
-    'analytics.ai.description': 'Geçmiş verilerin doğal dil yorumlama ile eyleme dönüştürülebilir içgörüler',
+    'analytics.ai.title': 'AI Destekli Öngörülü İstihbarat ve Öneriler',
+    'analytics.ai.description': 'Sofistike makine öğrenimi motoru, doğal dil işleme yoluyla eyleme dönüştürülebilir iş zekaları üretmek için kapsamlı geçmiş veri setlerini analiz eder. Gelişmiş algoritmalar gizli paternleri tespit eder, gelecek trendleri öngörür ve envanter yönetimi, personel tahsisi ve promosyon planlaması için optimal stratejiler önerir. Bağlamsal içgörüler, mevsimsel paternler, müşteri davranış değişimleri, rekabet dinamikleri ve pazar koşulları dahil çoklu değişkenleri göz önünde bulundurarak, ölçülebilir performans iyileştirmeleri ve stratejik avantaj sağlayan regilatif öneriler sunar.',
 
     'analytics.metrics.trafficIncrease': 'Günlük Trafik Artışı',
     'analytics.metrics.processing': 'Gerçek Zamanlı İşleme',
