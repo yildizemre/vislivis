@@ -30,8 +30,17 @@ const UseCasesSection = () => {
   ];
 
   return (
-    <section className="py-32 bg-white">
-      <div className="container mx-auto px-8">
+    <section className="py-32 bg-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-100">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+                           linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
+        }}></div>
+      </div>
+
+      <div className="container mx-auto px-8 relative z-10">
         <div className="text-center mb-20">
           <div className="inline-flex items-center px-4 py-2 bg-gray-100 rounded-full text-gray-600 text-sm font-medium mb-6">
             {t('useCases.badge')}

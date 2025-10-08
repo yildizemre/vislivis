@@ -40,8 +40,17 @@ const AnalyticsDashboardSection = () => {
   ];
 
   return (
-    <section id="analytics" className="py-32 bg-white">
-      <div className="container mx-auto px-8">
+    <section id="analytics" className="py-32 bg-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-100">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+                           linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
+        }}></div>
+      </div>
+
+      <div className="container mx-auto px-8 relative z-10">
         <div className="text-center mb-20">
           <div className="inline-flex items-center px-4 py-2 bg-gray-100 rounded-full text-gray-600 text-sm font-medium mb-6">
             {t('analytics.badge')}
@@ -59,10 +68,10 @@ const AnalyticsDashboardSection = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <div
               className="group relative overflow-hidden rounded-2xl border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
-              onClick={() => setSelectedImage("/WhatsApp Image 2025-09-30 at 19.55.04.jpeg")}
+              onClick={() => setSelectedImage("/panel1.jpeg")}
             >
               <img
-                src="/WhatsApp Image 2025-09-30 at 19.55.04.jpeg"
+                src="/panel1.jpeg"
                 alt="Vislivis Dashboard Analytics"
                 className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
               />
@@ -70,10 +79,10 @@ const AnalyticsDashboardSection = () => {
             </div>
             <div
               className="group relative overflow-hidden rounded-2xl border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
-              onClick={() => setSelectedImage("/6ae33b02-9b6c-47e2-a179-efe3f156a607.jpg")}
+              onClick={() => setSelectedImage("/panel2.jpg")}
             >
               <img
-                src="/6ae33b02-9b6c-47e2-a179-efe3f156a607.jpg"
+                src="/panel2.jpg"
                 alt="Vislivis Real-time Monitoring"
                 className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
               />
@@ -93,7 +102,7 @@ const AnalyticsDashboardSection = () => {
               return (
                 <div
                   key={index}
-                  className="group relative bg-white rounded-2xl border border-gray-100 p-8 hover:border-gray-200 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                  className="group relative bg-white rounded-2xl border border-gray-100 p-8 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
                 >
                   <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-500`}></div>
                   
