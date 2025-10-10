@@ -14,10 +14,10 @@ const Footer = () => {
   ];
 
   const supportLinks = [
-    { key: 'footer.support.docs', href: '#' },
-    { key: 'footer.support.center', href: '#' },
+    { key: 'footer.support.docs', href: '/documentation', internal: true },
+    { key: 'footer.support.center', href: '/support-center', internal: true },
     { key: 'footer.support.contact', href: '#contact' },
-    { key: 'footer.support.status', href: '#' }
+    { key: 'footer.support.status', href: '/system-status', internal: true }
   ];
 
   const companyLinks = [
@@ -80,12 +80,21 @@ const Footer = () => {
             <ul className="space-y-4">
               {supportLinks.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-300 font-medium"
-                  >
-                    {t(link.key)}
-                  </a>
+                  {link.internal ? (
+                    <Link
+                      to={link.href}
+                      className="text-gray-400 hover:text-white transition-colors duration-300 font-medium"
+                    >
+                      {t(link.key)}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-gray-400 hover:text-white transition-colors duration-300 font-medium"
+                    >
+                      {t(link.key)}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -114,6 +123,45 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+
+        {/* Certifications */}
+        <div className="border-t border-gray-800 pt-8 pb-8">
+          <div className="text-center mb-6">
+            <h3 className="text-lg font-bold text-white mb-2">
+              {t('footer.certifications') || 'Sertifikalarımız'}
+            </h3>
+          </div>
+          <div className="flex flex-wrap justify-center items-center gap-8">
+            <div className="h-16 flex items-center justify-center bg-white rounded-lg p-3 hover:shadow-lg transition-shadow">
+              <img
+                src="/GDPR.png"
+                alt="GDPR Certified"
+                className="h-full w-auto object-contain"
+              />
+            </div>
+            <div className="h-16 flex items-center justify-center bg-white rounded-lg p-3 hover:shadow-lg transition-shadow">
+              <img
+                src="/ISO9001 Kapak.jpg"
+                alt="ISO 9001 Certified"
+                className="h-full w-auto object-contain"
+              />
+            </div>
+            <div className="h-16 flex items-center justify-center bg-white rounded-lg p-3 hover:shadow-lg transition-shadow">
+              <img
+                src="/iso27001.png"
+                alt="ISO 27001 Certified"
+                className="h-full w-auto object-contain"
+              />
+            </div>
+            <div className="h-16 flex items-center justify-center bg-white rounded-lg p-3 hover:shadow-lg transition-shadow">
+              <img
+                src="/soc.png"
+                alt="SOC Certified"
+                className="h-full w-auto object-contain"
+              />
+            </div>
           </div>
         </div>
 

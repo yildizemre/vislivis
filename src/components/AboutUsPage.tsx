@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Target, Eye, Heart, Users, Award, Zap, Shield, TrendingUp } from 'lucide-react';
+import { Target, Eye, Heart, Award, Zap, Shield, TrendingUp } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const AboutUsPage = () => {
@@ -42,7 +42,7 @@ const AboutUsPage = () => {
       gradient: 'from-blue-500 to-cyan-600'
     },
     {
-      icon: Users,
+      icon: Heart,
       title: t('about.values.customer.title'),
       description: t('about.values.customer.description'),
       gradient: 'from-green-500 to-teal-600'
@@ -63,7 +63,7 @@ const AboutUsPage = () => {
 
   const differentiators = [
     {
-      metric: '99.9%',
+      metric: '%92',
       title: t('about.differentiators.accuracy'),
       description: 'Industry-leading AI accuracy with continuous learning'
     },
@@ -73,7 +73,7 @@ const AboutUsPage = () => {
       description: 'Real-time processing for instant insights'
     },
     {
-      metric: '500+',
+      metric: '50+',
       title: t('about.differentiators.stores'),
       description: 'Trusted by leading retail chains worldwide'
     },
@@ -84,36 +84,6 @@ const AboutUsPage = () => {
     }
   ];
 
-  const teamMembers = [
-    {
-      name: 'Ahmet Yılmaz',
-      role: 'CEO & Co-Founder',
-      bio: 'AI ve retail teknolojileri alanında 15+ yıl deneyim',
-      avatar: 'AY',
-      gradient: 'from-blue-500 to-cyan-600'
-    },
-    {
-      name: 'Elif Kaya',
-      role: 'CTO & Co-Founder',
-      bio: 'Computer Vision ve Machine Learning uzmanı',
-      avatar: 'EK',
-      gradient: 'from-green-500 to-teal-600'
-    },
-    {
-      name: 'Mehmet Demir',
-      role: 'Head of Product',
-      bio: 'Retail operasyonları ve UX tasarım lideri',
-      avatar: 'MD',
-      gradient: 'from-orange-500 to-red-600'
-    },
-    {
-      name: 'Zeynep Özkan',
-      role: 'Head of Sales',
-      bio: 'B2B satış ve müşteri ilişkileri uzmanı',
-      avatar: 'ZO',
-      gradient: 'from-pink-500 to-rose-600'
-    }
-  ];
 
   return (
     <>
@@ -236,41 +206,6 @@ const AboutUsPage = () => {
                   </h4>
                   <p className="text-gray-600 text-sm font-light leading-relaxed">
                     {diff.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Team */}
-          <div>
-            <div className="text-center mb-16">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Users className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">{t('about.team.title')}</h3>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
-                {t('about.team.subtitle')}
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {teamMembers.map((member, index) => (
-                <div
-                  key={index}
-                  className="group text-center p-8 bg-white rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
-                >
-                  <div className={`w-20 h-20 bg-gradient-to-br ${member.gradient} rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    {member.avatar}
-                  </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">
-                    {member.name}
-                  </h4>
-                  <p className="text-blue-600 font-semibold mb-4">
-                    {member.role}
-                  </p>
-                  <p className="text-gray-600 text-sm font-light leading-relaxed">
-                    {member.bio}
                   </p>
                 </div>
               ))}
