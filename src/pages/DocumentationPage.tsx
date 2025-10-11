@@ -1,10 +1,33 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import SEO from '../components/SEO';
 import { Book, Search, ChevronRight, FileText, Video, Code, HelpCircle } from 'lucide-react';
 
 const DocumentationPage = () => {
   const { t, language } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
+
+  const seoContent = language === 'tr' ? {
+    title: 'Vislivis Dokümantasyon - API Kılavuzu, Kullanım Kılavuzları ve Video Eğitimleri',
+    description: 'Vislivis retail analitik platformu için kapsamlı dokümantasyon, API referansı, kullanım kılavuzları, video eğitimleri ve entegrasyon örnekleri.',
+    keywords: 'vislivis dokümantasyon, API dokümantasyonu, retail analytics API, kullanım kılavuzu, video eğitim, entegrasyon kılavuzu'
+  } : {
+    title: 'Vislivis Documentation - API Guide, User Manuals and Video Tutorials',
+    description: 'Comprehensive documentation for Vislivis retail analytics platform, API reference, user guides, video tutorials and integration examples.',
+    keywords: 'vislivis documentation, API documentation, retail analytics API, user guide, video tutorial, integration guide'
+  };
+
+  const documentationSchema = {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": seoContent.title,
+    "description": seoContent.description,
+    "url": "https://www.vislivis.com/documentation",
+    "author": {
+      "@type": "Organization",
+      "name": "Vislivis"
+    }
+  };
 
   const documentationSections = language === 'tr' ? [
     {
@@ -114,6 +137,12 @@ const DocumentationPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <SEO
+        title={seoContent.title}
+        description={seoContent.description}
+        keywords={seoContent.keywords}
+        schema={documentationSchema}
+      />
       {/* Hero Section */}
       <div className="bg-gray-900 text-white py-20">
         <div className="container mx-auto px-8">

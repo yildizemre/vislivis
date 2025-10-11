@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import SEO from '../components/SEO';
 import { 
   MessageCircle, 
   Mail, 
@@ -15,6 +16,41 @@ import {
 
 const SupportCenterPage = () => {
   const { t, language } = useLanguage();
+
+  const seoContent = language === 'tr' ? {
+    title: 'Vislivis Destek Merkezi - 7/24 Teknik Destek, Canlı Destek ve Yardım',
+    description: 'Vislivis destek ekibi 7/24 hizmetinizde. Canlı sohbet, e-posta, telefon desteği ve uzaktan yardım ile anında çözüm bulun.',
+    keywords: 'vislivis destek, teknik destek, canlı destek, yardım merkezi, müşteri hizmetleri, 7/24 destek'
+  } : {
+    title: 'Vislivis Support Center - 24/7 Technical Support, Live Chat and Help',
+    description: 'Vislivis support team is available 24/7. Get instant solutions with live chat, email, phone support and remote assistance.',
+    keywords: 'vislivis support, technical support, live support, help center, customer service, 24/7 support'
+  };
+
+  const supportSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "headline": seoContent.title,
+    "description": seoContent.description,
+    "url": "https://www.vislivis.com/support-center",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Vislivis",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+90-216-451-91-12",
+        "contactType": "customer support",
+        "areaServed": ["TR", "Global"],
+        "availableLanguage": ["tr", "en"],
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      }
+    }
+  };
 
   const supportChannels = language === 'tr' ? [
     {
@@ -184,6 +220,12 @@ const SupportCenterPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <SEO
+        title={seoContent.title}
+        description={seoContent.description}
+        keywords={seoContent.keywords}
+        schema={supportSchema}
+      />
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
         <div className="container mx-auto px-8">

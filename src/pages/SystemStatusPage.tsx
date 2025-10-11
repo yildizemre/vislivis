@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import SEO from '../components/SEO';
 import { 
   CheckCircle, 
   AlertCircle, 
@@ -16,6 +17,24 @@ import {
 
 const SystemStatusPage = () => {
   const { language } = useLanguage();
+
+  const seoContent = language === 'tr' ? {
+    title: 'Vislivis Sistem Durumu - Gerçek Zamanlı Durum İzleme ve Uptime',
+    description: 'Vislivis platformunun gerçek zamanlı sistem durumunu, uptime metriklerini, planlı bakımları ve olayları takip edin. %99.98 çalışma süresi.',
+    keywords: 'sistem durumu, uptime, sistem izleme, server durumu, API durumu, platform sağlığı'
+  } : {
+    title: 'Vislivis System Status - Real-Time Status Monitoring and Uptime',
+    description: 'Track Vislivis platform real-time system status, uptime metrics, scheduled maintenance and incidents. 99.98% uptime.',
+    keywords: 'system status, uptime, system monitoring, server status, API status, platform health'
+  };
+
+  const statusSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "headline": seoContent.title,
+    "description": seoContent.description,
+    "url": "https://www.vislivis.com/system-status"
+  };
 
   const systemStatus = language === 'tr' ? [
     {
@@ -203,6 +222,12 @@ const SystemStatusPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <SEO
+        title={seoContent.title}
+        description={seoContent.description}
+        keywords={seoContent.keywords}
+        schema={statusSchema}
+      />
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white py-20">
         <div className="container mx-auto px-8">

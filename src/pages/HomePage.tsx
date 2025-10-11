@@ -1,5 +1,6 @@
 import React, { lazy, Suspense, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import SEO from '../components/SEO';
 import HeroSection from '../components/HeroSection';
 import RetailFeaturesSection from '../components/RetailFeaturesSection';
 
@@ -31,22 +32,75 @@ const HomePage = () => {
 
   const content = seoContent[language as keyof typeof seoContent];
 
-  useEffect(() => {
-    document.title = content.title;
-
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', content.description);
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Vislivis",
+    "url": "https://www.vislivis.com",
+    "logo": "https://www.vislivis.com/vislivis (6)-Photoroom.png",
+    "description": content.description,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Saldan Collective Office, Yenişehir, Mustafa Akyol Sokağı No:7a-a, İç Kapı No:27",
+      "addressLocality": "Pendik",
+      "addressRegion": "İstanbul",
+      "postalCode": "34912",
+      "addressCountry": "TR"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+90-216-451-91-12",
+      "contactType": "customer service",
+      "availableLanguage": ["tr", "en"]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/vislivis",
+      "https://twitter.com/vislivis"
+    ],
+    "areaServed": ["TR", "Global"],
+    "knowsAbout": ["Retail Analytics", "AI", "Computer Vision", "Machine Learning", "Retail Technology"],
+    "award": ["Retail Tech Awards 2023 - Best Analytics Platform", "ISO 27001", "ISO 9001"],
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "value": "50"
     }
+  };
 
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      metaKeywords.setAttribute('content', content.keywords);
-    }
-  }, [content]);
+  const softwareSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Vislivis",
+    "operatingSystem": "Web, iOS, Android",
+    "applicationCategory": "BusinessApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "127"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "TRY"
+    },
+    "description": content.description
+  };
+
+  const combinedSchema = {
+    "@context": "https://schema.org",
+    "@graph": [organizationSchema, softwareSchema]
+  };
 
   return (
     <>
+      <SEO
+        title={content.title}
+        description={content.description}
+        keywords={content.keywords}
+        ogTitle={content.title}
+        ogDescription={content.description}
+        ogType="website"
+        schema={combinedSchema}
+      />
       <HeroSection />
       <RetailFeaturesSection />
       <Suspense fallback={<div className="py-20 bg-white"></div>}>

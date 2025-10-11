@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Target, Eye, Heart, Award, Zap, Shield, TrendingUp } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import SEO from './SEO';
 
 const AboutUsPage = () => {
   const { t, language } = useLanguage();
@@ -20,19 +21,35 @@ const AboutUsPage = () => {
 
   const content = seoContent[language as keyof typeof seoContent];
 
-  useEffect(() => {
-    document.title = content.title;
-
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', content.description);
+  const aboutPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": content.title,
+    "description": content.description,
+    "url": "https://www.vislivis.com/hakkimizda",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Vislivis",
+      "foundingDate": "2020",
+      "founders": [
+        {
+          "@type": "Person",
+          "name": "Vislivis Founders"
+        }
+      ],
+      "description": "AI-powered retail analytics platform",
+      "knowsAbout": ["Artificial Intelligence", "Retail Analytics", "Computer Vision", "Machine Learning"],
+      "numberOfEmployees": "50+",
+      "location": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Istanbul",
+          "addressCountry": "TR"
+        }
+      }
     }
-
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      metaKeywords.setAttribute('content', content.keywords);
-    }
-  }, [content]);
+  };
 
   const values = [
     {
@@ -87,6 +104,15 @@ const AboutUsPage = () => {
 
   return (
     <>
+      <SEO
+        title={content.title}
+        description={content.description}
+        keywords={content.keywords}
+        ogTitle={content.title}
+        ogDescription={content.description}
+        ogType="website"
+        schema={aboutPageSchema}
+      />
       <section id="about-us" className="py-32 bg-white">
         <div className="container mx-auto px-8">
         <div className="text-center mb-20">
