@@ -53,6 +53,21 @@ const UseCasesSection = () => {
           </p>
         </div>
 
+        {/* Video showcase under the heading */}
+        <div className="max-w-5xl mx-auto mb-16">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200" style={{ paddingBottom: '56.25%' }}>
+            <video
+              className="absolute inset-0 w-full h-full object-cover"
+              src="/stock-footage-security-camera-footage-with-a-mother-and-a-child-in-supermarket-sophisticated-software-with.webm"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+            />
+          </div>
+        </div>
+
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-3 gap-8">
             {useCases.map((useCase, index) => {

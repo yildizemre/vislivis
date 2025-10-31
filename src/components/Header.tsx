@@ -36,12 +36,26 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const linkClass = isScrolled
+    ? 'text-gray-600 hover:text-gray-900 transition-colors duration-300 font-medium text-sm'
+    : 'text-white/90 hover:text-white transition-colors duration-300 font-medium text-sm';
+
+  const globeColor = isScrolled ? 'text-gray-500' : 'text-white/80';
+  const mobileButtonColor = isScrolled ? 'text-gray-900' : 'text-white';
+
+  const langButtonClass = (code: 'en' | 'tr') => {
+    if (isScrolled) {
+      return `${language === code ? 'text-blue-600 bg-blue-50' : 'text-gray-500 hover:text-gray-700'} px-2 py-1 text-xs font-medium transition-all duration-300 rounded`;
+    }
+    return `${language === code ? 'text-blue-300 bg-white/10' : 'text-white/80 hover:text-white'} px-2 py-1 text-xs font-medium transition-all duration-300 rounded`;
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
           ? 'bg-white/80 backdrop-blur-xl border-b border-gray-100 shadow-sm'
-          : 'bg-transparent'
+          : 'bg-black/10 backdrop-blur-sm'
       }`}
     >
       <nav className="container mx-auto px-8 py-6">
@@ -49,7 +63,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img
-              src="/vislivis (6)-Photoroom.png"
+              src={isScrolled ? '/vislivis (6)-Photoroom.png' : '/logobeyaz.png'}
               alt="Vislivis"
               className="h-8 w-auto"
             />
@@ -59,37 +73,37 @@ const Header = () => {
           <div className="hidden lg:flex items-center space-x-10">
             <Link
               to="/hakkimizda"
-              className="text-gray-600 hover:text-gray-900 transition-colors duration-300 font-medium text-sm"
+              className={linkClass}
             >
               {t('nav.about')}
             </Link>
             <button
               onClick={() => scrollToSection('features')}
-              className="text-gray-600 hover:text-gray-900 transition-colors duration-300 font-medium text-sm"
+              className={linkClass}
             >
               {t('nav.features')}
             </button>
             <button
               onClick={() => scrollToSection('analytics')}
-              className="text-gray-600 hover:text-gray-900 transition-colors duration-300 font-medium text-sm"
+              className={linkClass}
             >
               {t('nav.analytics')}
             </button>
             <button
               onClick={() => scrollToSection('integrations')}
-              className="text-gray-600 hover:text-gray-900 transition-colors duration-300 font-medium text-sm"
+              className={linkClass}
             >
               {t('nav.integrations')}
             </button>
             <button
               onClick={() => scrollToSection('pricing')}
-              className="text-gray-600 hover:text-gray-900 transition-colors duration-300 font-medium text-sm"
+              className={linkClass}
             >
               {t('nav.pricing')}
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="text-gray-600 hover:text-gray-900 transition-colors duration-300 font-medium text-sm"
+              className={linkClass}
             >
               {t('nav.contact')}
             </button>
@@ -99,25 +113,17 @@ const Header = () => {
           <div className="hidden lg:flex items-center space-x-6">
             {/* Language Switcher */}
             <div className="flex items-center space-x-1">
-              <Globe className="w-4 h-4 text-gray-500" />
+              <Globe className={`w-4 h-4 ${globeColor}`} />
               <button
                 onClick={() => setLanguage('en')}
-                className={`px-2 py-1 text-xs font-medium transition-all duration-300 rounded ${
-                  language === 'en' 
-                    ? 'text-blue-600 bg-blue-50' 
-                    : 'text-gray-500 hover:text-gray-700'
-                }`}
+                className={langButtonClass('en')}
               >
                 EN
               </button>
-              <span className="text-gray-300">|</span>
+              <span className={isScrolled ? 'text-gray-300' : 'text-white/40'}>|</span>
               <button
                 onClick={() => setLanguage('tr')}
-                className={`px-2 py-1 text-xs font-medium transition-all duration-300 rounded ${
-                  language === 'tr' 
-                    ? 'text-blue-600 bg-blue-50' 
-                    : 'text-gray-500 hover:text-gray-700'
-                }`}
+                className={langButtonClass('tr')}
               >
                 TR
               </button>
@@ -132,7 +138,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-gray-900 p-2"
+            className={`lg:hidden ${mobileButtonColor} p-2`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

@@ -8,8 +8,19 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+      {/* Background video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src="/stock-footage-ai-powered-mock-up-cctv-footage-in-supermarket-people-shopping-in-a-grocery-store-multiple-camera.webm"
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+      {/* Dark overlay for readability over video */}
+      <div className="absolute inset-0 bg-black/40"></div>
       {/* Grid background pattern */}
-      <div className="absolute inset-0 opacity-100">
+      <div className="absolute inset-0 opacity-40">
         <div className="absolute inset-0" style={{
           backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
                            linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 1px, transparent 1px)`,
@@ -25,8 +36,8 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-8 max-w-6xl mx-auto">
-        <div className="space-y-8">
+      <div className="relative z-10 text-center px-4 sm:px-8 max-w-6xl mx-auto">
+        <div className="backdrop-blur-md bg-white/20 border border-white/30 rounded-2xl shadow-xl p-6 sm:p-10 space-y-8">
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 bg-blue-50 border border-blue-100 rounded-full text-blue-700 text-sm font-medium">
             <div className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></div>
@@ -36,16 +47,16 @@ const HeroSection = () => {
           {/* Main heading */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight tracking-tight">
             <span className="block">{t('hero.title')}</span>
-            <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
+            <span className="block text-[#00cadc]">
               {t('hero.subtitle')}
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-white max-w-4xl mx-auto leading-relaxed font-light">
             {t('hero.description')}
           </p>
           
-          <p className="text-lg text-gray-500 max-w-3xl mx-auto leading-relaxed font-light">
+          <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed font-light">
             {t('hero.tagline')}
           </p>
 
@@ -66,7 +77,7 @@ const HeroSection = () => {
 
             <button
               onClick={() => setShowVideoModal(true)}
-              className="group px-8 py-4 border-2 border-gray-200 text-gray-700 text-lg font-semibold rounded-xl hover:border-gray-300 hover:bg-gray-50 transition-all duration-300 flex items-center space-x-3"
+              className="group px-8 py-4 border-2 border-gray-200 text-white text-lg font-semibold rounded-xl hover:border-gray-300 hover:bg-gray-50 transition-all duration-300 flex items-center space-x-3"
             >
               <Play className="w-5 h-5" />
               <span>{t('hero.watchDemo')}</span>
@@ -76,16 +87,16 @@ const HeroSection = () => {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto pt-16">
             <div className="text-center">
-              <div className="text-4xl font-bold text-gray-900 mb-2">91.8%</div>
-              <div className="text-sm text-gray-500 uppercase tracking-wider font-medium">{t('hero.accuracy')}</div>
+              <div className="text-4xl font-bold text-white mb-2">94.8%</div>
+              <div className="text-sm text-white uppercase tracking-wider font-medium">{t('hero.accuracy')}</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-gray-900 mb-2">24/7</div>
-              <div className="text-sm text-gray-500 uppercase tracking-wider font-medium">{t('hero.realTime')}</div>
+              <div className="text-4xl font-bold text-white mb-2">24/7</div>
+              <div className="text-sm text-white uppercase tracking-wider font-medium">{t('hero.realTime')}</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-gray-900 mb-2">12+</div>
-              <div className="text-sm text-gray-500 uppercase tracking-wider font-medium">{t('hero.stores')}</div>
+              <div className="text-4xl font-bold text-white mb-2">140+</div>
+              <div className="text-sm text-white uppercase tracking-wider font-medium">{t('hero.stores')}</div>
             </div>
           </div>
         </div>

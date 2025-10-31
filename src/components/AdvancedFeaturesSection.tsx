@@ -108,6 +108,21 @@ const AdvancedFeaturesSection = () => {
               );
             })}
           </div>
+
+          {/* Video showcase under the advanced features */}
+          <div className="max-w-5xl mx-auto mt-16">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200" style={{ paddingBottom: '56.25%' }}>
+              <video
+                className="absolute inset-0 w-full h-full object-cover"
+                src="/stock-footage-ai-powered-mock-up-cctv-footage-in-supermarket-people-shopping-in-a-grocery-store-multiple-camera%20(1).webm"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
