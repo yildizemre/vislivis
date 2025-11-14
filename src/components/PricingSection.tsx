@@ -4,9 +4,9 @@ import { Check, Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { use3DTilt } from '../hooks/use3DTilt';
 import { useLanguage } from '../contexts/LanguageContext';
 
-// Placeholder logos - replace with actual client logos
-const BoynerLogo = 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=200&h=100&fit=crop';
-const BeymenLogo = 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=200&h=100&fit=crop';
+// Client logos
+const BoynerLogo = '/Boyner_Logo.jpg';
+const BeymenLogo = '/Beymen_logo.png';
 
 const PricingSection = () => {
   const { t } = useLanguage();
@@ -163,8 +163,8 @@ const PricingSection = () => {
                 <div key={item.company} className="w-full flex-shrink-0 px-8 md:px-16 py-14 flex flex-col gap-8">
                   <div className="flex flex-col md:flex-row md:items-center gap-10">
                     <div className="flex items-center justify-center">
-                      <div className="w-44 h-30 rounded-3xl bg-gradient-to-br from-blue-600 to-purple-600 shadow-[0_18px_40px_rgba(15,23,42,0.12)] border border-slate-200 flex items-center justify-center overflow-hidden">
-                        <h3 className="text-3xl font-bold text-white">{item.company}</h3>
+                      <div className="w-44 h-30 rounded-3xl bg-white shadow-[0_18px_40px_rgba(15,23,42,0.12)] border border-slate-200 flex items-center justify-center overflow-hidden p-4">
+                        <img src={item.logo} alt={`${item.company} logo`} className="max-w-full max-h-full object-contain" />
                       </div>
                     </div>
                     <div className="flex-1 text-left space-y-1">
