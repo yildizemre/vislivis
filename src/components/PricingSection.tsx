@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react';
 
 import { Check, Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { use3DTilt } from '../hooks/use3DTilt';
-
-const BoynerLogo = new URL('../../dist/Boyner_Logo.jpg', import.meta.url).href;
-const BeymenLogo = new URL('../../dist/Beymen_logo.png', import.meta.url).href;
 import { useLanguage } from '../contexts/LanguageContext';
+
+// Placeholder logos - replace with actual client logos
+const BoynerLogo = 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=200&h=100&fit=crop';
+const BeymenLogo = 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=200&h=100&fit=crop';
 
 const PricingSection = () => {
   const { t } = useLanguage();

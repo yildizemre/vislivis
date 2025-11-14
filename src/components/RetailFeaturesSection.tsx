@@ -1,6 +1,4 @@
 import { Users, BarChart3, MapPin, UserCheck, Clock, TrendingUp } from 'lucide-react';
-import ShoppingImage from '../../dist/shopping.png';
-import OptimizedImage from './OptimizedImage';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const RetailFeaturesSection = () => {
@@ -193,11 +191,11 @@ const RetailFeaturesSection = () => {
                 <div
                   className="relative w-full h-full flex items-center justify-center"
                 >
-                  <OptimizedImage
-                    src={ShoppingImage}
+                  <img
+                    src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop"
                     alt="Shopping Analytics"
-                    className="w-[95%] h-[95%] drop-shadow-[0_25px_45px_rgba(15,23,42,0.18)]"
-                    priority={false}
+                    className="w-[95%] h-[95%] object-cover drop-shadow-[0_25px_45px_rgba(15,23,42,0.18)]"
+                    loading="lazy"
                   />
                 </div>
               </div>

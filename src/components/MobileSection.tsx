@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Bell, Eye, Settings, FileText, Download } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import TabletAnalyticsImage from '../../dist/dashboard-datas1.png';
 import GradientMesh from './GradientMesh';
+
+// Dashboard analytics image
+const TabletAnalyticsImage = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop';
 
 const MobileSection = () => {
   const { t } = useLanguage();
