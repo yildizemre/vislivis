@@ -3,9 +3,6 @@ import { Bell, Eye, Settings, FileText, Download } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import GradientMesh from './GradientMesh';
 
-// Dashboard analytics image
-const TabletAnalyticsImage = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop';
-
 const MobileSection = () => {
   const { t } = useLanguage();
   const [activeFeature, setActiveFeature] = useState(0);
@@ -78,7 +75,7 @@ const MobileSection = () => {
                   <div className="w-[32rem] h-[22rem] xl:w-[36rem] xl:h-[24rem] bg-slate-950 rounded-[2.5rem] border-[9px] border-white/10 shadow-[0_32px_110px_rgba(8,15,35,0.6)] overflow-hidden">
                     <div className="absolute inset-5 bg-slate-900 rounded-[2rem] overflow-hidden border border-white/10">
                       <img
-                        src={TabletAnalyticsImage}
+                        src="/panel1.jpeg"
                         alt="Vislivis Tablet Dashboard"
                         className="w-full h-full object-cover"
                       />

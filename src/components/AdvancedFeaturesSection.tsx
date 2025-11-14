@@ -116,7 +116,7 @@ const AdvancedFeaturesSection = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-[0_28px_80px_rgba(8,14,35,0.55)] border border-white/10" style={{ paddingBottom: '56.25%' }}>
               <video
                 className="absolute inset-0 w-full h-full object-cover"
-                src="/stock-footage-ai-powered-mock-up-cctv-footage-in-supermarket-people-shopping-in-a-grocery-store-multiple-camera%20(1).webm"
+                src="/stock-footage-security-camera-footage-with-a-mother-and-a-child-in-supermarket-sophisticated-software-with.webm"
                 autoPlay
                 muted
                 loop
