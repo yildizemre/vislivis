@@ -58,18 +58,18 @@ const HeroSection = () => {
           </div>
 
           {/* Main heading */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight tracking-tight">
             <span className="block">{t('hero.title')}</span>
             <span className="block text-[#00cadc]">
               {t('hero.subtitle')}
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed">
             {t('hero.description')}
           </p>
           
-          <p className="text-base text-white/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base text-white/80 max-w-3xl mx-auto leading-relaxed">
             {t('hero.tagline')}
           </p>
 
