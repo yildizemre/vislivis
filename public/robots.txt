@@ -1,0 +1,25 @@
+# Robots.txt for Vislivis - AI Retail Analytics Platform
+
+User-agent: *
+Allow: /
+
+# Priority pages
+Allow: /hakkimizda
+Allow: /#blog
+Allow: /documentation
+Allow: /support-center
+Allow: /system-status
+
+# Sitemaps
+Sitemap: https://www.vislivis.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 0
+
+# Block bad bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
