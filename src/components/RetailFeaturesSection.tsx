@@ -192,9 +192,9 @@ const RetailFeaturesSection = () => {
                   className="relative w-full h-full flex items-center justify-center"
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop"
+                    src="/WhatsApp Image 2025-09-30 at 19.55.04.jpeg"
                     alt="Shopping Analytics"
-                    className="w-[95%] h-[95%] object-cover drop-shadow-[0_25px_45px_rgba(15,23,42,0.18)]"
+                    className="w-[95%] h-[95%] object-cover rounded-full drop-shadow-[0_25px_45px_rgba(15,23,42,0.18)]"
                     loading="lazy"
                   />
                 </div>
