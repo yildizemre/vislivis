@@ -12,7 +12,7 @@ import LiveStats from '../components/LiveStats';
 import RetailFeaturesSection from '../components/RetailFeaturesSection';
 import PromoModal from '../components/PromoModal';
 import ScrollReveal from '../components/ScrollReveal';
-import { SectionSkeleton, BlogCardSkeleton } from '../components/Skeleton';
+import { SectionSkeleton } from '../components/Skeleton';
 
 const UseCasesSection = lazy(() => import('../components/UseCasesSection'));
 const AnalyticsDashboardSection = lazy(() => import('../components/AnalyticsDashboardSection'));
@@ -22,7 +22,6 @@ const IntegrationsSection = lazy(() => import('../components/IntegrationsSection
 const MobileSection = lazy(() => import('../components/MobileSection'));
 const PricingSection = lazy(() => import('../components/PricingSection'));
 // const TestimonialsSection = lazy(() => import('../components/TestimonialsSection'));
-const BlogSection = lazy(() => import('../components/BlogSection'));
 const FAQSection = lazy(() => import('../components/FAQSection'));
 const ContactSection = lazy(() => import('../components/ContactSection'));
 
@@ -131,9 +130,6 @@ const HomePage = () => {
           <MobileSection />
         </div>
         <PricingSection />
-        <div id="blog">
-          <BlogSection />
-        </div>
         <FAQSection />
         <ScrollReveal direction="up" delay={220}>
           <ContactSection />
