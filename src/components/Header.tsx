@@ -294,12 +294,6 @@ const Header = () => {
                 TR
               </button>
             </div>
-            <button 
-              onClick={() => window.open('https://orbitra-retail.netlify.app/', '_blank')}
-              className="px-6 py-2.5 bg-gray-900 text-white hover:bg-gray-800 transition-all duration-300 font-medium text-sm rounded-lg shadow-sm hover:shadow-md"
-            >
-              {t('nav.panel')}
-            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -389,12 +383,6 @@ const Header = () => {
                     TR
                   </button>
                 </div>
-                <button 
-                  onClick={() => window.open('https://orbitra-retail.netlify.app/', '_blank')}
-                  className="px-6 py-2.5 bg-gray-900 text-white hover:bg-gray-800 transition-colors font-medium rounded-lg"
-                >
-                  {t('nav.panel')}
-                </button>
               </div>
             </div>
           </div>

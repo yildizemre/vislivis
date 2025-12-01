@@ -125,7 +125,9 @@ const HomePage = () => {
           </div>
         </ScrollReveal>
         <ScrollReveal direction="scale" delay={180}>
-          <IntegrationsSection />
+          <div id="integrations">
+            <IntegrationsSection />
+          </div>
         </ScrollReveal>
         <div id="mobile">
           <MobileSection />
