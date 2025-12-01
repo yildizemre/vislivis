@@ -127,22 +127,14 @@ const HomePage = () => {
         <ScrollReveal direction="scale" delay={180}>
           <IntegrationsSection />
         </ScrollReveal>
-        <ScrollReveal direction="up" delay={220}>
-          <div id="mobile">
-            <MobileSection />
-          </div>
-        </ScrollReveal>
-        <ScrollReveal direction="fade" delay={180}>
-          <PricingSection />
-        </ScrollReveal>
-        <ScrollReveal direction="up" delay={200}>
-          <div id="blog">
-            <BlogSection />
-          </div>
-        </ScrollReveal>
-        <ScrollReveal direction="right" delay={220}>
-          <FAQSection />
-        </ScrollReveal>
+        <div id="mobile">
+          <MobileSection />
+        </div>
+        <PricingSection />
+        <div id="blog">
+          <BlogSection />
+        </div>
+        <FAQSection />
         <ScrollReveal direction="up" delay={220}>
           <ContactSection />
         </ScrollReveal>

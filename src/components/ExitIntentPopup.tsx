@@ -8,15 +8,31 @@ const ExitIntentPopup = () => {
   const [hasShown, setHasShown] = useState(false);
 
   useEffect(() => {
-    const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0 && !hasShown) {
-        setIsVisible(true);
-        setHasShown(true);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasShown) {
+            // IntegrationsSection görünür olduğunda popup'ı göster
+            setTimeout(() => {
+              setIsVisible(true);
+              setHasShown(true);
+            }, 500); // Küçük bir gecikme ile daha yumuşak görünüm
+          }
+        });
+      },
+      { threshold: 0.3 } // Bölümün %30'u görünür olduğunda tetikle
+    );
+
+    const integrationsSection = document.getElementById('integrations');
+    if (integrationsSection) {
+      observer.observe(integrationsSection);
+    }
+
+    return () => {
+      if (integrationsSection) {
+        observer.unobserve(integrationsSection);
       }
     };
-
-    document.addEventListener('mouseleave', handleMouseLeave);
-    return () => document.removeEventListener('mouseleave', handleMouseLeave);
   }, [hasShown]);
 
   const handleClose = () => {
