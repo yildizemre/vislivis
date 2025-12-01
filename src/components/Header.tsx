@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -274,9 +273,6 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-6">
-            {/* Theme Toggle */}
-            <ThemeToggle />
-            
             {/* Language Switcher */}
             <div className="flex items-center space-x-1">
               <Globe className={`w-4 h-4 ${globeColor}`} />

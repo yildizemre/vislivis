@@ -39,7 +39,7 @@ const AboutUsPage = () => {
       ],
       "description": "AI-powered retail analytics platform",
       "knowsAbout": ["Artificial Intelligence", "Retail Analytics", "Computer Vision", "Machine Learning"],
-      "numberOfEmployees": "50+",
+      "numberOfEmployees": "140+",
       "location": {
         "@type": "Place",
         "address": {
@@ -98,22 +98,22 @@ const AboutUsPage = () => {
 
   const differentiators = [
     {
-      metric: '%92',
+      metric: '%95.2',
       title: t('about.differentiators.accuracy'),
       description: 'Industry-leading AI accuracy with continuous learning'
     },
     {
-      metric: '0.2s',
+      metric: '<0.1s',
       title: t('about.differentiators.speed'),
       description: 'Real-time processing for instant insights'
     },
     {
-      metric: '50+',
+      metric: '140+',
       title: t('about.differentiators.stores'),
       description: 'Trusted by leading retail chains worldwide'
     },
     {
-      metric: '24/7',
+      metric: '7/24',
       title: t('about.differentiators.support'),
       description: 'Continuous monitoring and dedicated support'
     }
