@@ -7,7 +7,6 @@ import LogosSection from '../components/LogosSection';
 import StickyCTA from '../components/StickyCTA';
 import ScrollProgress from '../components/ScrollProgress';
 import ExitIntentPopup from '../components/ExitIntentPopup';
-import ChatbotWidget from '../components/ChatbotWidget';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import LiveStats from '../components/LiveStats';
 import RetailFeaturesSection from '../components/RetailFeaturesSection';
@@ -81,7 +80,6 @@ const HomePage = () => {
       <ScrollProgress />
       <StickyCTA />
       <ExitIntentPopup />
-      <ChatbotWidget />
       <ScrollToTopButton />
       <LiveStats />
       <SEO
