@@ -1,8 +1,6 @@
-import { useLanguage } from '../contexts/LanguageContext';
 import { Quote } from 'lucide-react';
 
 const LogosSection = () => {
-  const { t } = useLanguage();
 
   const testimonials = [
     {
@@ -105,7 +103,7 @@ const LogosSection = () => {
         {/* Logos Grid */}
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-            {logos.map((logo, index) => (
+            {logos.map((logo) => (
               <div
                 key={logo.name}
                 className="group flex items-center justify-center p-6 bg-white rounded-2xl border border-slate-100 hover:border-blue-200 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 cursor-pointer"

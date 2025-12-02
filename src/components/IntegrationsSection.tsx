@@ -1,10 +1,8 @@
 import { Database, Users, CreditCard, Zap, BarChart3, FileText, CheckCircle2 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { use3DTilt } from '../hooks/use3DTilt';
 
 const IntegrationsSection = () => {
   const { t } = useLanguage();
-  const tilt = use3DTilt(5);
 
   const integrations = [
     {
@@ -52,20 +50,10 @@ const IntegrationsSection = () => {
   ];
 
   return (
-    <section className="py-24 md:py-28 bg-gradient-to-br from-slate-50 via-blue-50 to-slate-50 relative overflow-hidden">
-      {/* Animated Background Blobs */}
-      <div className="absolute inset-0 overflow-hidden opacity-30">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s' }}></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-purple-400 to-pink-400 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '10s', animationDelay: '2s' }}></div>
-      </div>
-      
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 opacity-60">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
-                           linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px'
-        }}></div>
+    <section className="py-24 md:py-28 bg-white relative overflow-hidden">
+      {/* Subtle Pattern Background similar to Comparison Section */}
+      <div className="absolute inset-0 opacity-30">
+         <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
       </div>
 
       <div className="container mx-auto px-8 relative z-10">
@@ -89,16 +77,10 @@ const IntegrationsSection = () => {
               return (
                 <div
                   key={index}
-                  onMouseMove={tilt.handleMouseMove}
-                  onMouseLeave={tilt.handleMouseLeave}
-                  style={tilt.tiltStyle}
-                  className="group relative bg-white rounded-3xl border-2 border-slate-100 p-8 hover:border-blue-200 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden"
+                  className="group relative bg-white rounded-3xl border border-slate-100 p-8 hover:border-blue-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                 >
-                  {/* Gradient Overlay on Hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${integration.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-3xl`}></div>
-                  
                   <div className="relative z-10">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${integration.gradient} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-all duration-500 shadow-lg`}>
+                    <div className={`w-16 h-16 bg-gradient-to-br ${integration.gradient} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-all duration-300 shadow-md`}>
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
 
@@ -128,11 +110,8 @@ const IntegrationsSection = () => {
           </div>
 
           {/* Integration Benefits */}
-          <div className="mt-16 bg-white rounded-3xl border-2 border-slate-100 p-10 shadow-xl">
+          <div className="mt-16 bg-slate-50/50 backdrop-blur-sm rounded-3xl border border-slate-100 p-10 shadow-lg">
             <div className="text-center mb-10">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl mb-6 shadow-lg">
-                <Zap className="w-8 h-8 text-white" />
-              </div>
               <h3 className="text-3xl font-bold text-slate-900 mb-4">
                 {t('integrations.capabilities.title')}
               </h3>
@@ -142,19 +121,19 @@ const IntegrationsSection = () => {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="text-center p-6 bg-white rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300 group">
+              <div className="text-center p-6 bg-white rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-md transition-all duration-300 group">
                 <div className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">{t('integrations.api.title')}</div>
                 <div className="text-sm text-slate-600 leading-relaxed">{t('integrations.api.description')}</div>
               </div>
-              <div className="text-center p-6 bg-white rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300 group">
+              <div className="text-center p-6 bg-white rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-md transition-all duration-300 group">
                 <div className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">{t('integrations.webhook.title')}</div>
                 <div className="text-sm text-slate-600 leading-relaxed">{t('integrations.webhook.description')}</div>
               </div>
-              <div className="text-center p-6 bg-white rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300 group">
+              <div className="text-center p-6 bg-white rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-md transition-all duration-300 group">
                 <div className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">{t('integrations.formats.title')}</div>
                 <div className="text-sm text-slate-600 leading-relaxed">{t('integrations.formats.description')}</div>
               </div>
-              <div className="text-center p-6 bg-white rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300 group">
+              <div className="text-center p-6 bg-white rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-md transition-all duration-300 group">
                 <div className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">{t('integrations.security.title')}</div>
                 <div className="text-sm text-slate-600 leading-relaxed">{t('integrations.security.description')}</div>
               </div>

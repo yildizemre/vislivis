@@ -27,7 +27,7 @@ const ComparisonSlider = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 relative overflow-hidden">
       <div className="container mx-auto px-8">
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-blue-50 border border-blue-100 rounded-full text-blue-700 text-sm font-medium mb-6">
@@ -44,51 +44,60 @@ const ComparisonSlider = () => {
         <div className="max-w-6xl mx-auto">
           <div
             ref={containerRef}
-            className="relative w-full h-[600px] rounded-3xl overflow-hidden shadow-2xl cursor-ew-resize select-none"
+            className="relative w-full h-[650px] rounded-3xl overflow-hidden shadow-2xl cursor-ew-resize select-none ring-1 ring-slate-200"
             onMouseMove={handleMouseMove}
             onTouchMove={handleTouchMove}
           >
+            {/* Common Layout Structure for perfect alignment */}
             {/* Before Image (Without AI) */}
             <div className="absolute inset-0 bg-slate-100">
-              {/* Pattern Background */}
-              <div className="absolute inset-0 opacity-5" style={{
+              <div className="absolute inset-0 opacity-10" style={{
                 backgroundImage: 'radial-gradient(#000 1px, transparent 1px)',
-                backgroundSize: '20px 20px'
+                backgroundSize: '24px 24px'
               }}></div>
               
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
-                <div className="relative z-10 bg-white/60 backdrop-blur-md p-8 rounded-3xl border border-white/50 shadow-xl max-w-md w-full">
-                  <div className="text-center mb-6">
-                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-3xl">📉</span>
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-800 mb-2">{t('comparison.before.title')}</h3>
-                    <div className="h-1 w-12 bg-red-400 mx-auto rounded-full"></div>
+              <div className="absolute inset-0 flex items-center justify-center p-8 md:p-16">
+                <div className="w-full max-w-lg bg-white/80 backdrop-blur-md rounded-3xl shadow-lg border border-slate-200 p-8 relative overflow-hidden">
+                  {/* Header */}
+                  <div className="text-center mb-8 pb-6 border-b border-slate-100">
+                     <div className="w-20 h-20 bg-red-50 rounded-2xl mx-auto mb-4 flex items-center justify-center transform rotate-3">
+                        <span className="text-4xl grayscale opacity-70">📉</span>
+                     </div>
+                     <h3 className="text-2xl font-bold text-slate-700 mb-2">{t('comparison.before.title')}</h3>
+                     <p className="text-slate-400 text-sm">Geleneksel Yöntemler</p>
                   </div>
-                  
-                  <ul className="space-y-3 text-slate-600 mb-8">
-                    <li className="flex items-center bg-white/50 p-2 rounded-lg border border-red-100">
-                      <span className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-3 text-xs">❌</span>
-                      <span className="text-sm font-medium">{t('comparison.before.point1')}</span>
-                    </li>
-                    <li className="flex items-center bg-white/50 p-2 rounded-lg border border-red-100">
-                      <span className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-3 text-xs">❌</span>
-                      <span className="text-sm font-medium">{t('comparison.before.point2')}</span>
-                    </li>
-                    <li className="flex items-center bg-white/50 p-2 rounded-lg border border-red-100">
-                      <span className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-3 text-xs">❌</span>
-                      <span className="text-sm font-medium">{t('comparison.before.point3')}</span>
-                    </li>
-                  </ul>
 
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-red-50 p-3 rounded-xl text-center border border-red-100">
-                      <div className="text-xl font-bold text-red-600">-40%</div>
-                      <div className="text-xs text-red-400 font-semibold uppercase">{t('comparison.stats.efficiency')}</div>
+                  {/* Content List - Same height/spacing as After */}
+                  <div className="space-y-4 mb-8">
+                    <div className="flex items-center p-3 bg-red-50/50 rounded-xl border border-red-100/50">
+                      <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mr-4 text-red-500 shrink-0">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                      </div>
+                      <span className="text-slate-600 font-medium">Manuel Veri Toplama</span>
                     </div>
-                    <div className="bg-slate-50 p-3 rounded-xl text-center border border-slate-200">
-                      <div className="text-xl font-bold text-slate-600">-60%</div>
-                      <div className="text-xs text-slate-400 font-semibold uppercase">{t('comparison.stats.time')}</div>
+                    <div className="flex items-center p-3 bg-red-50/50 rounded-xl border border-red-100/50">
+                      <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mr-4 text-red-500 shrink-0">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                      </div>
+                      <span className="text-slate-600 font-medium">Gecikmeli İçgörüler</span>
+                    </div>
+                    <div className="flex items-center p-3 bg-red-50/50 rounded-xl border border-red-100/50">
+                      <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mr-4 text-red-500 shrink-0">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                      </div>
+                      <span className="text-slate-600 font-medium">Tahmine Dayalı Kararlar</span>
+                    </div>
+                  </div>
+
+                  {/* Stats Footer */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="p-4 bg-slate-50 rounded-2xl text-center">
+                      <div className="text-xl font-bold text-slate-400">-40%</div>
+                      <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mt-1">Verimlilik</div>
+                    </div>
+                    <div className="p-4 bg-slate-50 rounded-2xl text-center">
+                       <div className="text-xl font-bold text-slate-400">-60%</div>
+                       <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mt-1">Hız</div>
                     </div>
                   </div>
                 </div>
@@ -97,47 +106,59 @@ const ComparisonSlider = () => {
 
             {/* After Image (With AI) */}
             <div
-              className="absolute inset-0 bg-gradient-to-br from-[#00cadc] to-blue-600"
+              className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900"
               style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
             >
-              {/* Abstract Background */}
-              <div className="absolute inset-0 opacity-20">
-                <div className="absolute top-0 left-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] filter contrast-125 brightness-100"></div>
+              <div className="absolute inset-0 opacity-40">
+                 <div className="absolute top-0 left-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] filter contrast-125 brightness-100"></div>
+                 <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-blue-500/30 blur-[100px] rounded-full animate-pulse"></div>
+                 <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-cyan-500/30 blur-[100px] rounded-full animate-pulse delay-1000"></div>
               </div>
 
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
-                <div className="relative z-10 bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/30 shadow-2xl max-w-md w-full">
-                  <div className="text-center mb-6">
-                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm shadow-inner border border-white/30">
-                      <span className="text-3xl">🚀</span>
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">{t('comparison.after.title')}</h3>
-                    <div className="h-1 w-12 bg-white mx-auto rounded-full shadow-[0_0_10px_rgba(255,255,255,0.5)]"></div>
-                  </div>
+              <div className="absolute inset-0 flex items-center justify-center p-8 md:p-16">
+                <div className="w-full max-w-lg bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 p-8 relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400"></div>
                   
-                  <ul className="space-y-3 text-white mb-8">
-                    <li className="flex items-center bg-white/10 p-2 rounded-lg border border-white/20 backdrop-blur-sm hover:bg-white/20 transition-colors">
-                      <span className="w-6 h-6 bg-[#00cadc] rounded-full flex items-center justify-center mr-3 text-xs shadow-lg border border-white/30">✓</span>
-                      <span className="text-sm font-medium text-white/90">{t('comparison.after.point1')}</span>
-                    </li>
-                    <li className="flex items-center bg-white/10 p-2 rounded-lg border border-white/20 backdrop-blur-sm hover:bg-white/20 transition-colors">
-                      <span className="w-6 h-6 bg-[#00cadc] rounded-full flex items-center justify-center mr-3 text-xs shadow-lg border border-white/30">✓</span>
-                      <span className="text-sm font-medium text-white/90">{t('comparison.after.point2')}</span>
-                    </li>
-                    <li className="flex items-center bg-white/10 p-2 rounded-lg border border-white/20 backdrop-blur-sm hover:bg-white/20 transition-colors">
-                      <span className="w-6 h-6 bg-[#00cadc] rounded-full flex items-center justify-center mr-3 text-xs shadow-lg border border-white/30">✓</span>
-                      <span className="text-sm font-medium text-white/90">{t('comparison.after.point3')}</span>
-                    </li>
-                  </ul>
+                  {/* Header */}
+                  <div className="text-center mb-8 pb-6 border-b border-white/10">
+                     <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-lg shadow-cyan-500/30 transform -rotate-3">
+                        <span className="text-4xl">🚀</span>
+                     </div>
+                     <h3 className="text-2xl font-bold text-white mb-2">{t('comparison.after.title')}</h3>
+                     <p className="text-blue-200 text-sm">AI Destekli Analitik</p>
+                  </div>
 
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-white/90 p-3 rounded-xl text-center shadow-lg transform hover:scale-105 transition-transform">
-                      <div className="text-xl font-bold text-[#00cadc]">+85%</div>
-                      <div className="text-xs text-slate-600 font-semibold uppercase">{t('comparison.stats.revenue')}</div>
+                  {/* Content List */}
+                  <div className="space-y-4 mb-8">
+                    <div className="flex items-center p-3 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+                      <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center mr-4 text-green-400 shrink-0">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </div>
+                      <span className="text-white font-medium">Otomatik Veri İşleme</span>
                     </div>
-                    <div className="bg-white/90 p-3 rounded-xl text-center shadow-lg transform hover:scale-105 transition-transform">
-                      <div className="text-xl font-bold text-purple-600">+120%</div>
-                      <div className="text-xs text-slate-600 font-semibold uppercase">{t('comparison.stats.roi')}</div>
+                    <div className="flex items-center p-3 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+                      <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center mr-4 text-green-400 shrink-0">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </div>
+                      <span className="text-white font-medium">Gerçek Zamanlı İçgörü</span>
+                    </div>
+                    <div className="flex items-center p-3 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+                      <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center mr-4 text-green-400 shrink-0">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </div>
+                      <span className="text-white font-medium">Veriye Dayalı Büyüme</span>
+                    </div>
+                  </div>
+
+                  {/* Stats Footer */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="p-4 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl text-center border border-blue-500/20">
+                      <div className="text-xl font-bold text-cyan-300">+85%</div>
+                      <div className="text-[10px] font-bold text-blue-200 uppercase tracking-wider mt-1">Gelir Artışı</div>
+                    </div>
+                    <div className="p-4 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl text-center border border-purple-500/20">
+                       <div className="text-xl font-bold text-purple-300">120%</div>
+                       <div className="text-[10px] font-bold text-purple-200 uppercase tracking-wider mt-1">ROI</div>
                     </div>
                   </div>
                 </div>
@@ -146,10 +167,10 @@ const ComparisonSlider = () => {
 
             {/* Slider Handle */}
             <div
-              className="absolute top-0 bottom-0 w-1 bg-white shadow-2xl"
+              className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize z-20 shadow-[0_0_20px_rgba(0,0,0,0.3)]"
               style={{ left: `${sliderPosition}%` }}
             >
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-xl flex items-center justify-center">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-xl flex items-center justify-center ring-4 ring-black/5">
                 <div className="flex gap-1">
                   <div className="w-0.5 h-4 bg-slate-400"></div>
                   <div className="w-0.5 h-4 bg-slate-400"></div>
@@ -158,11 +179,15 @@ const ComparisonSlider = () => {
             </div>
 
             {/* Labels */}
-            <div className="absolute top-4 left-4 px-4 py-2 bg-black/50 backdrop-blur-sm rounded-lg text-white text-sm font-semibold">
-              {t('comparison.before.label')}
+            <div className="absolute top-6 left-6 z-10">
+               <span className="px-4 py-2 bg-white/90 backdrop-blur shadow-lg rounded-lg text-slate-900 text-sm font-bold border border-slate-200">
+                  {t('comparison.before.label')}
+               </span>
             </div>
-            <div className="absolute top-4 right-4 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg text-slate-900 text-sm font-semibold">
-              {t('comparison.after.label')}
+            <div className="absolute top-6 right-6 z-10">
+               <span className="px-4 py-2 bg-black/50 backdrop-blur shadow-lg rounded-lg text-white text-sm font-bold border border-white/20">
+                  {t('comparison.after.label')}
+               </span>
             </div>
           </div>
         </div>
