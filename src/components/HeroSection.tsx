@@ -103,30 +103,40 @@ const HeroSection = () => {
              <div className="absolute -top-20 -right-20 w-96 h-96 bg-[#00cadc]/20 rounded-full blur-[100px] animate-pulse pointer-events-none"></div>
              <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-purple-500/20 rounded-full blur-[100px] animate-pulse delay-1000 pointer-events-none"></div>
              
-             {/* Image Container - Exact Logo Shape (Only top-right rounded like Vislivis logo) */}
-             <div className="relative overflow-hidden shadow-2xl shadow-black/50 group transition-all duration-700 hover:-translate-y-2"
-                  style={{ 
-                    borderRadius: '0 200px 0 0' // Only top-right corner rounded, matching the Vislivis logo exactly
-                  }}
-             >
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/60 via-transparent to-transparent z-10"></div>
-                <img 
-                  src="/costumer_home.jpeg" 
-                  alt="Retail Analytics Dashboard" 
-                  className="w-full h-[600px] object-cover transform group-hover:scale-110 transition-transform duration-1000"
-                />
-                
-                {/* Floating UI Elements on Image */}
-                <div className="absolute bottom-12 right-8 z-20 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-5 shadow-lg max-w-[200px]">
-                   <div className="flex items-center gap-3 mb-2">
-                      <div className="relative flex h-3 w-3">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-                      </div>
-                      <span className="text-white text-sm font-bold tracking-wide">Canlı Analiz</span>
-                   </div>
-                   <div className="text-white/70 text-xs font-medium">Mağaza trafiği işleniyor...</div>
-                </div>
+             {/* Image Container - Vislivis Logo Shape (bottom-right rounded + small inverted piece below) */}
+             <div className="relative">
+               {/* Main Image - Bottom-right corner rounded */}
+               <div className="relative overflow-hidden shadow-2xl shadow-black/50 group transition-all duration-700 hover:-translate-y-2"
+                    style={{ 
+                      borderRadius: '0 0 200px 0' // Only bottom-right corner rounded
+                    }}
+               >
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/60 via-transparent to-transparent z-10"></div>
+                  <img 
+                    src="/costumer_home.jpeg" 
+                    alt="Retail Analytics Dashboard" 
+                    className="w-full h-[550px] object-cover transform group-hover:scale-110 transition-transform duration-1000"
+                  />
+                  
+                  {/* Floating UI Elements on Image */}
+                  <div className="absolute bottom-12 right-8 z-20 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-5 shadow-lg max-w-[200px]">
+                     <div className="flex items-center gap-3 mb-2">
+                        <div className="relative flex h-3 w-3">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                        </div>
+                        <span className="text-white text-sm font-bold tracking-wide">Canlı Analiz</span>
+                     </div>
+                     <div className="text-white/70 text-xs font-medium">Mağaza trafiği işleniyor...</div>
+                  </div>
+               </div>
+               
+               {/* Small inverted piece below - like the Vislivis logo mark */}
+               <div className="absolute -bottom-8 left-0 w-20 h-20 bg-[#0f172a]"
+                    style={{
+                      borderRadius: '0 100px 0 0' // Top-right corner rounded (inverted from main)
+                    }}
+               ></div>
              </div>
           </div>
 

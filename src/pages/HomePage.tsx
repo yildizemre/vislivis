@@ -3,7 +3,6 @@ import { useLanguage } from '../contexts/LanguageContext';
 import SEO from '../components/SEO';
 import { buildGraph } from '../utils/seoSchemas';
 import HeroSection from '../components/HeroSection';
-import LogosSection from '../components/LogosSection';
 import StickyCTA from '../components/StickyCTA';
 import ScrollProgress from '../components/ScrollProgress';
 import ExitIntentPopup from '../components/ExitIntentPopup';
@@ -93,7 +92,6 @@ const HomePage = () => {
       <ScrollReveal direction="up" delay={60}>
         <HeroSection />
       </ScrollReveal>
-      <LogosSection />
       <ScrollReveal direction="right" delay={140}>
         <RetailFeaturesSection />
       </ScrollReveal>
