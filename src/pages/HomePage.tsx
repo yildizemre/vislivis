@@ -3,13 +3,13 @@ import { useLanguage } from '../contexts/LanguageContext';
 import SEO from '../components/SEO';
 import { buildGraph } from '../utils/seoSchemas';
 import HeroSection from '../components/HeroSection';
+import ReferencesSection from '../components/ReferencesSection';
 import StickyCTA from '../components/StickyCTA';
 import ScrollProgress from '../components/ScrollProgress';
 import ExitIntentPopup from '../components/ExitIntentPopup';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import LiveStats from '../components/LiveStats';
 import RetailFeaturesSection from '../components/RetailFeaturesSection';
-import PromoModal from '../components/PromoModal';
 import ScrollReveal from '../components/ScrollReveal';
 import { SectionSkeleton } from '../components/Skeleton';
 
@@ -95,15 +95,13 @@ const HomePage = () => {
       <ScrollReveal direction="right" delay={140}>
         <RetailFeaturesSection />
       </ScrollReveal>
-      <ScrollReveal direction="scale" delay={200}>
-        <PromoModal backgroundSrc="/33af1d4f-a97f-4c95-8c83-1657c70a6599.png" />
-      </ScrollReveal>
       <Suspense fallback={<SectionSkeleton />}>
         <ScrollReveal direction="left" delay={140}>
           <div id="use-cases">
             <UseCasesSection />
           </div>
         </ScrollReveal>
+        <ReferencesSection />
         <ScrollReveal direction="up" delay={160}>
           <div id="analytics">
             <AnalyticsDashboardSection />
