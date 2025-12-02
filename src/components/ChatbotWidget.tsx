@@ -61,20 +61,50 @@ const ChatbotWidget = () => {
     };
 
     setMessages(prev => [...prev, userMessage]);
+    const messageText = inputValue;
     setInputValue('');
     setIsLoading(true);
 
-    // Simüle edilmiş bot yanıtı (şimdilik)
-    setTimeout(() => {
+    try {
+      // Backend'e gönder
+      const response = await fetch('/.netlify/functions/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: 'Chatbot Ziyaretçisi',
+          email: 'chatbot@vislivis.com', // Admin bildirimi için placeholder
+          subject: 'Yeni Chatbot Mesajı',
+          message: messageText
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Mesaj gönderilemedi');
+      }
+
+      // Başarılı yanıt
       const botMessage: ChatMessage = {
         id: (Date.now() + 1).toString(),
-        text: 'Teşekkür ederim! Mesajınız alındı. Ekibimiz en kısa sürede sizinle iletişime geçecektir.',
+        text: 'Teşekkür ederim! Mesajınız destek ekibimize başarıyla iletildi. En kısa sürede dönüş yapacağız.',
         sender: 'bot',
         timestamp: new Date()
       };
       setMessages(prev => [...prev, botMessage]);
+
+    } catch (error) {
+      console.error('Chatbot error:', error);
+      const errorMessage: ChatMessage = {
+        id: (Date.now() + 1).toString(),
+        text: 'Üzgünüz, mesajınız iletilirken bir hata oluştu. Lütfen iletişim formunu kullanmayı deneyin.',
+        sender: 'bot',
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
       setIsLoading(false);
-    }, 500);
+    }
   };
 
   return (
@@ -183,7 +213,7 @@ const ChatbotWidget = () => {
           aria-label={isOpen ? 'Sohbeti kapat' : 'Sohbeti aç'}
         >
           {!isOpen && showTooltip && (
-            <span className="absolute top-0 right-0 w-3 h-3 bg-red-500 border-2 border-white rounded-full" aria-hidden="true"></span>
+            <span className="absolute top-0 right-0 mt-1 mr-1 w-3.5 h-3.5 bg-red-500 border-2 border-white rounded-full z-50" aria-hidden="true"></span>
           )}
           {isOpen ? (
             <X className="w-6 h-6" />

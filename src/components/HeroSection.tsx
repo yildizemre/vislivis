@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, Play, X } from 'lucide-react';
+import { ArrowRight, Play, X, Target, Clock, Store } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useCountUp } from '../hooks/useCountUp';
 import ParallaxLayer from './ParallaxLayer';
@@ -98,18 +98,26 @@ const HeroSection = () => {
           </div>
 
           {/* Stats - Mobil uyumlu */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-3xl mx-auto pt-8 sm:pt-12 md:pt-16 px-4">
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/20" ref={accuracy.ref}>
-              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-2">{accuracy.value}</div>
-              <div className="text-xs text-white/90 uppercase tracking-wider font-semibold">{t('hero.accuracy')}</div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto pt-8 sm:pt-12 md:pt-16 px-4">
+            <div className="group relative overflow-hidden text-center bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:transform hover:-translate-y-1 shadow-lg" ref={accuracy.ref}>
+              <div className="absolute -top-6 -left-6 w-16 h-16 bg-blue-500/20 rounded-full blur-xl group-hover:bg-blue-500/30 transition-colors"></div>
+              <Target className="w-8 h-8 text-[#00cadc] mx-auto mb-3 opacity-80 group-hover:opacity-100 transition-opacity" />
+              <div className="text-4xl sm:text-5xl font-black text-white mb-2 tracking-tight drop-shadow-sm">{accuracy.value}</div>
+              <div className="text-xs text-blue-100 uppercase tracking-widest font-bold">{t('hero.accuracy')}</div>
             </div>
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/20">
-              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-2">24/7</div>
-              <div className="text-xs text-white/90 uppercase tracking-wider font-semibold">{t('hero.realTime')}</div>
+            
+            <div className="group relative overflow-hidden text-center bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:transform hover:-translate-y-1 shadow-lg">
+              <div className="absolute -top-6 -right-6 w-16 h-16 bg-purple-500/20 rounded-full blur-xl group-hover:bg-purple-500/30 transition-colors"></div>
+              <Clock className="w-8 h-8 text-purple-300 mx-auto mb-3 opacity-80 group-hover:opacity-100 transition-opacity" />
+              <div className="text-4xl sm:text-5xl font-black text-white mb-2 tracking-tight drop-shadow-sm">24/7</div>
+              <div className="text-xs text-purple-100 uppercase tracking-widest font-bold">{t('hero.realTime')}</div>
             </div>
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/20" ref={stores.ref}>
-              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-2">{stores.value}</div>
-              <div className="text-xs text-white/90 uppercase tracking-wider font-semibold">{t('hero.stores')}</div>
+            
+            <div className="group relative overflow-hidden text-center bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:transform hover:-translate-y-1 shadow-lg" ref={stores.ref}>
+              <div className="absolute -bottom-6 -right-6 w-16 h-16 bg-green-500/20 rounded-full blur-xl group-hover:bg-green-500/30 transition-colors"></div>
+              <Store className="w-8 h-8 text-green-300 mx-auto mb-3 opacity-80 group-hover:opacity-100 transition-opacity" />
+              <div className="text-4xl sm:text-5xl font-black text-white mb-2 tracking-tight drop-shadow-sm">{stores.value}</div>
+              <div className="text-xs text-green-100 uppercase tracking-widest font-bold">{t('hero.stores')}</div>
             </div>
           </div>
         </div>

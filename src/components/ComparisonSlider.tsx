@@ -49,30 +49,47 @@ const ComparisonSlider = () => {
             onTouchMove={handleTouchMove}
           >
             {/* Before Image (Without AI) */}
-            <div className="absolute inset-0 bg-slate-200">
+            <div className="absolute inset-0 bg-slate-100">
+              {/* Pattern Background */}
+              <div className="absolute inset-0 opacity-5" style={{
+                backgroundImage: 'radial-gradient(#000 1px, transparent 1px)',
+                backgroundSize: '20px 20px'
+              }}></div>
+              
               <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
-                <div className="text-center mb-8">
-                  <div className="text-6xl mb-4">📊</div>
-                  <h3 className="text-2xl font-bold text-slate-700 mb-4">{t('comparison.before.title')}</h3>
-                  <ul className="text-left space-y-2 text-slate-600 text-sm">
-                    <li>❌ {t('comparison.before.point1')}</li>
-                    <li>❌ {t('comparison.before.point2')}</li>
-                    <li>❌ {t('comparison.before.point3')}</li>
-                    <li>❌ {t('comparison.before.point4')}</li>
-                    <li>❌ Yüksek operasyonel maliyetler</li>
-                    <li>❌ Yetersiz müşteri içgörüleri</li>
-                  </ul>
-                </div>
-                
-                {/* Before Stats */}
-                <div className="flex gap-4 mt-auto">
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl px-4 py-2 text-center">
-                    <div className="text-2xl font-bold text-red-600">-40%</div>
-                    <div className="text-xs text-slate-600">{t('comparison.stats.efficiency')}</div>
+                <div className="relative z-10 bg-white/60 backdrop-blur-md p-8 rounded-3xl border border-white/50 shadow-xl max-w-md w-full">
+                  <div className="text-center mb-6">
+                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-3xl">📉</span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-800 mb-2">{t('comparison.before.title')}</h3>
+                    <div className="h-1 w-12 bg-red-400 mx-auto rounded-full"></div>
                   </div>
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl px-4 py-2 text-center">
-                    <div className="text-2xl font-bold text-blue-600">-60%</div>
-                    <div className="text-xs text-slate-600">{t('comparison.stats.time')}</div>
+                  
+                  <ul className="space-y-3 text-slate-600 mb-8">
+                    <li className="flex items-center bg-white/50 p-2 rounded-lg border border-red-100">
+                      <span className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-3 text-xs">❌</span>
+                      <span className="text-sm font-medium">{t('comparison.before.point1')}</span>
+                    </li>
+                    <li className="flex items-center bg-white/50 p-2 rounded-lg border border-red-100">
+                      <span className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-3 text-xs">❌</span>
+                      <span className="text-sm font-medium">{t('comparison.before.point2')}</span>
+                    </li>
+                    <li className="flex items-center bg-white/50 p-2 rounded-lg border border-red-100">
+                      <span className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-3 text-xs">❌</span>
+                      <span className="text-sm font-medium">{t('comparison.before.point3')}</span>
+                    </li>
+                  </ul>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-red-50 p-3 rounded-xl text-center border border-red-100">
+                      <div className="text-xl font-bold text-red-600">-40%</div>
+                      <div className="text-xs text-red-400 font-semibold uppercase">{t('comparison.stats.efficiency')}</div>
+                    </div>
+                    <div className="bg-slate-50 p-3 rounded-xl text-center border border-slate-200">
+                      <div className="text-xl font-bold text-slate-600">-60%</div>
+                      <div className="text-xs text-slate-400 font-semibold uppercase">{t('comparison.stats.time')}</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -80,32 +97,48 @@ const ComparisonSlider = () => {
 
             {/* After Image (With AI) */}
             <div
-              className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600"
+              className="absolute inset-0 bg-gradient-to-br from-[#00cadc] to-blue-600"
               style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
             >
+              {/* Abstract Background */}
+              <div className="absolute inset-0 opacity-20">
+                <div className="absolute top-0 left-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] filter contrast-125 brightness-100"></div>
+              </div>
+
               <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
-                <div className="text-center mb-8">
-                  <div className="text-6xl mb-4">🚀</div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{t('comparison.after.title')}</h3>
-                  <ul className="text-left space-y-2 text-white text-sm">
-                    <li>✅ {t('comparison.after.point1')}</li>
-                    <li>✅ {t('comparison.after.point2')}</li>
-                    <li>✅ {t('comparison.after.point3')}</li>
-                    <li>✅ {t('comparison.after.point4')}</li>
-                    <li>✅ Düşük operasyonel maliyetler</li>
-                    <li>✅ Detaylı müşteri analitiği</li>
-                  </ul>
-                </div>
-                
-                {/* After Stats */}
-                <div className="flex gap-4 mt-auto">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2 text-center">
-                    <div className="text-2xl font-bold text-green-600">+85%</div>
-                    <div className="text-xs text-slate-700">{t('comparison.stats.revenue')}</div>
+                <div className="relative z-10 bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/30 shadow-2xl max-w-md w-full">
+                  <div className="text-center mb-6">
+                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm shadow-inner border border-white/30">
+                      <span className="text-3xl">🚀</span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-2">{t('comparison.after.title')}</h3>
+                    <div className="h-1 w-12 bg-white mx-auto rounded-full shadow-[0_0_10px_rgba(255,255,255,0.5)]"></div>
                   </div>
-                  <div className="bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2 text-center">
-                    <div className="text-2xl font-bold text-purple-600">+120%</div>
-                    <div className="text-xs text-slate-700">{t('comparison.stats.roi')}</div>
+                  
+                  <ul className="space-y-3 text-white mb-8">
+                    <li className="flex items-center bg-white/10 p-2 rounded-lg border border-white/20 backdrop-blur-sm hover:bg-white/20 transition-colors">
+                      <span className="w-6 h-6 bg-[#00cadc] rounded-full flex items-center justify-center mr-3 text-xs shadow-lg border border-white/30">✓</span>
+                      <span className="text-sm font-medium text-white/90">{t('comparison.after.point1')}</span>
+                    </li>
+                    <li className="flex items-center bg-white/10 p-2 rounded-lg border border-white/20 backdrop-blur-sm hover:bg-white/20 transition-colors">
+                      <span className="w-6 h-6 bg-[#00cadc] rounded-full flex items-center justify-center mr-3 text-xs shadow-lg border border-white/30">✓</span>
+                      <span className="text-sm font-medium text-white/90">{t('comparison.after.point2')}</span>
+                    </li>
+                    <li className="flex items-center bg-white/10 p-2 rounded-lg border border-white/20 backdrop-blur-sm hover:bg-white/20 transition-colors">
+                      <span className="w-6 h-6 bg-[#00cadc] rounded-full flex items-center justify-center mr-3 text-xs shadow-lg border border-white/30">✓</span>
+                      <span className="text-sm font-medium text-white/90">{t('comparison.after.point3')}</span>
+                    </li>
+                  </ul>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-white/90 p-3 rounded-xl text-center shadow-lg transform hover:scale-105 transition-transform">
+                      <div className="text-xl font-bold text-[#00cadc]">+85%</div>
+                      <div className="text-xs text-slate-600 font-semibold uppercase">{t('comparison.stats.revenue')}</div>
+                    </div>
+                    <div className="bg-white/90 p-3 rounded-xl text-center shadow-lg transform hover:scale-105 transition-transform">
+                      <div className="text-xl font-bold text-purple-600">+120%</div>
+                      <div className="text-xs text-slate-600 font-semibold uppercase">{t('comparison.stats.roi')}</div>
+                    </div>
                   </div>
                 </div>
               </div>
