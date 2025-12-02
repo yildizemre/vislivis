@@ -1,23 +1,4 @@
-import { Quote } from 'lucide-react';
-
 const LogosSection = () => {
-
-  const testimonials = [
-    {
-      company: 'Boyner',
-      text: "Vislivis ile mağaza içi verimliliğimizi kampanya dönemlerinde anlık olarak takip edebiliyoruz. Rehber paneller, sıcak ve soğuk bölgeleri netleştirerek ekiplerimizin doğru hamleleri kısa sürede yapmasını sağladı.",
-      author: "Perakende Analitiği Direktörü",
-      metric: "Boyner, ziyaretçi başına geliri %18 artırdı.",
-      color: "text-orange-600"
-    },
-    {
-      company: 'Beymen',
-      text: "Lüks perakendecilikte müşteri deneyimi her şeydir. Vislivis'in sunduğu gerçek zamanlı içgörüler, müşterilerimize sunduğumuz hizmet kalitesini mükemmelleştirmemize yardımcı oldu. Mağaza içi dönüşüm oranlarımızda ciddi bir artış yakaladık.",
-      author: "Teknoloji ve İnovasyon Müdürü",
-      metric: "2.5x Dönüşüm Artışı",
-      color: "text-slate-900"
-    }
-  ];
 
   const logos = [
     { name: 'Migros', color: 'from-orange-500 to-orange-600' },
@@ -40,60 +21,80 @@ const LogosSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center mb-20">
-          <div className="text-sm font-bold tracking-[0.2em] text-slate-400 uppercase mb-4">
+        <div className="text-center mb-24">
+          <div className="text-xs font-bold tracking-[0.3em] text-slate-300 uppercase mb-6">
             REFERANSLARIMIZ
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
-            Perakende liderlerinin Visilivis deneyimi
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0f172a] tracking-tight">
+            Perakende liderlerinin Vislivis deneyimi
           </h2>
         </div>
 
-        {/* Testimonials Cards */}
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-7xl mx-auto mb-24">
-          {testimonials.map((item, index) => (
-            <div key={index} className="bg-white rounded-2xl p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-shadow duration-300">
-              <div className="flex flex-col h-full">
-                <div className="mb-8">
-                  <h3 className={`text-3xl font-bold ${item.color} mb-2`}>
-                    {item.company}
-                  </h3>
-                  <div className="text-slate-400 text-sm font-medium">
-                    {item.author}, {item.company}
-                  </div>
-                </div>
-
-                <p className="text-slate-600 text-lg leading-relaxed mb-8 font-light italic relative">
-                  <Quote className="w-8 h-8 text-slate-100 absolute -top-4 -left-4 -z-10" />
-                  "{item.text}"
-                </p>
-
-                <div className="mt-auto pt-6 border-t border-slate-50">
-                  <div className={`font-bold ${item.color} bg-slate-50 inline-block px-4 py-2 rounded-lg text-sm`}>
-                    {item.metric}
-                  </div>
-                </div>
-              </div>
+        {/* Testimonials Layout - Matching the clean side-by-side look */}
+        <div className="grid md:grid-cols-2 gap-16 lg:gap-24 max-w-7xl mx-auto mb-32 items-start">
+          {/* Boyner Column */}
+          <div className="flex flex-col space-y-8">
+            {/* Header */}
+            <div>
+              <h3 className="text-4xl font-bold text-[#ff8a65] mb-3">Boyner</h3> {/* Slightly softer orange/red like Boyner logo */}
+              <p className="text-slate-400 text-sm font-medium tracking-wide">Perakende Analitiği Direktörü, Boyner</p>
             </div>
-          ))}
+
+            {/* Quote */}
+            <p className="text-slate-500 text-lg font-light leading-relaxed italic">
+              "Vislivis ile mağaza içi verimliliğimizi kampanya dönemlerinde anlık olarak takip edebiliyoruz. Rehber paneller, sıcak ve soğuk bölgeleri netleştirerek ekiplerimizin doğru hamleleri kısa sürede yapmasını sağladı."
+            </p>
+
+            {/* Metric */}
+            <div className="pt-4">
+               <p className="text-cyan-500 font-bold text-sm tracking-wide">Boyner, ziyaretçi başına geliri %18 artırdı.</p>
+            </div>
+
+            {/* Footer Author */}
+            <div className="pt-2">
+              <p className="text-slate-300 text-xs font-medium">
+                Ebru Saatçi · Perakende Analitiği Direktörü, Boyner
+              </p>
+            </div>
+          </div>
+
+          {/* Beymen Column */}
+          <div className="flex flex-col space-y-8">
+            {/* Header */}
+            <div>
+              <h3 className="text-4xl font-bold text-[#1a237e] mb-3">Beymen</h3>
+              <p className="text-slate-400 text-sm font-medium tracking-wide">Müşteri Deneyimi Lideri, Beymen</p>
+            </div>
+
+            {/* Quote */}
+            <p className="text-slate-500 text-lg font-light leading-relaxed italic">
+              "Vislivis panelleri, premium müşteri yolculuğunu gerçek zamanlı görmemizi sağlıyor. Kasada bekleme sürelerini ve VIP alanlardaki yoğunluğu saniyeler içinde ölçebildiğimiz için müşteri memnuniyetinde belirgin artış yakaladık."
+            </p>
+
+            {/* Metric */}
+            <div className="pt-4 space-y-1">
+               <p className="text-[#1a237e] font-bold text-sm tracking-wide">2.5x Dönüşüm Artışı</p>
+               <p className="text-slate-500 text-xs">Beymen, VIP müşteri memnuniyetini %24 yükseltti.</p>
+            </div>
+          </div>
         </div>
 
         {/* Logos Section Header */}
-        <div className="text-center mb-12">
-          <h3 className="text-sm font-bold tracking-[0.2em] text-slate-400 uppercase mb-8">
+        <div className="text-center mb-16">
+          <h3 className="text-sm font-bold tracking-[0.2em] text-slate-400 uppercase">
             ÖNDE GELEN PERAKENDE ZİNCİRLERİNİN TERCİHİ
           </h3>
         </div>
 
         {/* Logos Grid */}
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12 items-center justify-items-center opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
             {logos.map((logo) => (
               <div
                 key={logo.name}
-                className="group flex items-center justify-center p-6 bg-white rounded-xl border border-slate-100 hover:border-blue-200 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer grayscale hover:grayscale-0"
+                className="w-full flex items-center justify-center group cursor-pointer"
               >
-                <div className={`text-xl md:text-2xl font-bold bg-gradient-to-r ${logo.color} bg-clip-text text-transparent opacity-60 group-hover:opacity-100 transition-all duration-300`}>
+                <div className={`text-xl md:text-2xl font-bold bg-gradient-to-r ${logo.color} bg-clip-text text-transparent transition-all duration-300 transform group-hover:scale-110`}>
                   {logo.name}
                 </div>
               </div>

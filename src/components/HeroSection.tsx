@@ -18,38 +18,44 @@ const HeroSection = () => {
           className="w-full h-full object-cover opacity-100"
         />
         {/* Overlay gradient for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a]/90 via-[#0f172a]/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a] via-[#0f172a]/90 to-transparent"></div>
       </div>
 
       {/* Content Container */}
-      <div className="container mx-auto px-6 relative z-10 pt-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-6 relative z-10 pt-20 lg:pt-0">
+        <div className="grid lg:grid-cols-12 gap-12 items-center min-h-[calc(100vh-80px)]">
           
-          {/* Left Column: Text Content */}
-          <div className="space-y-8">
-            {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-300 text-sm font-medium backdrop-blur-sm">
-              <div className="w-2 h-2 bg-blue-400 rounded-full mr-2 animate-pulse"></div>
-              Yapay Zeka Destekli Retail Analitik Platformu
+          {/* Left Column: Text Content - Wider (7 cols) */}
+          <div className="lg:col-span-7 space-y-10">
+            {/* Logo & Badge Group */}
+            <div className="space-y-6">
+              <img src="/logobeyaz.png" alt="Vislivis" className="h-12 w-auto mb-8" />
+              
+              <div className="inline-flex items-center px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-300 text-sm font-medium backdrop-blur-sm">
+                <div className="w-2 h-2 bg-blue-400 rounded-full mr-2 animate-pulse"></div>
+                Yapay Zeka Destekli Retail Analitik Platformu
+              </div>
             </div>
 
-            {/* Main Heading */}
+            {/* Main Heading - Larger & spread out */}
             <div>
-              <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-4">
+              <h1 className="text-6xl lg:text-8xl font-bold text-white leading-[1.1] tracking-tight mb-6 drop-shadow-2xl">
                 <span className="block">AI Destekli</span>
-                <span className="block text-[#00cadc]">Retail Analitik</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#00cadc] to-blue-500 filter drop-shadow-lg">
+                  Retail Analitik
+                </span>
               </h1>
-              <p className="text-xl text-slate-300 max-w-2xl font-light leading-relaxed">
+              <p className="text-2xl text-slate-300 max-w-3xl font-light leading-relaxed">
                 Retail operasyonlarınızı dönüştürün, satışları ve müşteri memnuniyetini maksimize edin.
               </p>
             </div>
 
-            <p className="text-slate-400 text-lg max-w-xl leading-relaxed">
+            <p className="text-slate-400 text-lg max-w-2xl leading-relaxed border-l-4 border-[#00cadc]/30 pl-6">
               Müşteri davranışlarını takip edin, mağaza performansını optimize edin ve gerçek zamanlı içgörülerle satışları artırın.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-5 pt-4">
               <button
                 onClick={() => {
                   const element = document.getElementById('contact');
@@ -57,60 +63,65 @@ const HeroSection = () => {
                     element.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="px-8 py-4 bg-[#00cadc] hover:bg-cyan-500 text-white text-lg font-semibold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:-translate-y-1"
+                className="px-10 py-5 bg-[#00cadc] hover:bg-cyan-500 text-white text-lg font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(0,202,220,0.3)] hover:shadow-[0_0_30px_rgba(0,202,220,0.5)] hover:-translate-y-1"
               >
                 <span>Ücretsiz Deneyin</span>
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-6 h-6" />
               </button>
 
               <button
                 onClick={() => setShowVideoModal(true)}
-                className="px-8 py-4 border border-white/20 hover:bg-white/10 text-white text-lg font-semibold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm hover:-translate-y-1"
+                className="px-10 py-5 border border-white/20 hover:bg-white/10 text-white text-lg font-semibold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm hover:-translate-y-1 group"
               >
-                <Play className="w-5 h-5" />
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                   <Play className="w-4 h-4 fill-current" />
+                </div>
                 <span>İzleyin</span>
               </button>
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/10">
+            <div className="grid grid-cols-3 gap-8 pt-10 border-t border-white/10 max-w-3xl">
               <div ref={accuracy.ref}>
-                <div className="text-3xl lg:text-4xl font-bold text-white mb-1">{accuracy.value}</div>
-                <div className="text-xs text-slate-400 uppercase tracking-wider font-medium">Doğruluk</div>
+                <div className="text-4xl lg:text-5xl font-bold text-white mb-2">{accuracy.value}</div>
+                <div className="text-xs text-slate-400 uppercase tracking-wider font-bold">Doğruluk</div>
               </div>
               <div>
-                <div className="text-3xl lg:text-4xl font-bold text-white mb-1">24/7</div>
-                <div className="text-xs text-slate-400 uppercase tracking-wider font-medium">Gerçek Zamanlı</div>
+                <div className="text-4xl lg:text-5xl font-bold text-white mb-2">24/7</div>
+                <div className="text-xs text-slate-400 uppercase tracking-wider font-bold">Gerçek Zamanlı</div>
               </div>
               <div ref={stores.ref}>
-                <div className="text-3xl lg:text-4xl font-bold text-white mb-1">{stores.value}</div>
-                <div className="text-xs text-slate-400 uppercase tracking-wider font-medium">Aktif Mağaza</div>
+                <div className="text-4xl lg:text-5xl font-bold text-white mb-2">{stores.value}</div>
+                <div className="text-xs text-slate-400 uppercase tracking-wider font-bold">Aktif Mağaza</div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Image with Frame */}
-          <div className="relative hidden lg:block">
+          {/* Right Column: Image with Frame - Narrower (5 cols) */}
+          <div className="hidden lg:block lg:col-span-5 relative">
              {/* Decorative Elements */}
-             <div className="absolute -top-10 -right-10 w-64 h-64 bg-[#00cadc]/20 rounded-full blur-3xl animate-pulse"></div>
-             <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+             <div className="absolute -top-20 -right-20 w-96 h-96 bg-[#00cadc]/20 rounded-full blur-[100px] animate-pulse pointer-events-none"></div>
+             <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-purple-500/20 rounded-full blur-[100px] animate-pulse delay-1000 pointer-events-none"></div>
              
              {/* Image Container */}
-             <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-black/50 transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+             <div className="relative rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl shadow-black/50 transform rotate-2 hover:rotate-0 transition-transform duration-700 group">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 via-transparent to-transparent z-10"></div>
                 <img 
                   src="/costumer_home.jpeg" 
                   alt="Retail Analytics Dashboard" 
-                  className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
+                  className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-1000"
                 />
                 
                 {/* Floating UI Elements on Image */}
-                <div className="absolute bottom-6 left-6 z-20 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4">
+                <div className="absolute bottom-8 left-8 z-20 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-5 shadow-lg">
                    <div className="flex items-center gap-3 mb-2">
-                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-white text-sm font-medium">Sistem Aktif</span>
+                      <div className="relative flex h-3 w-3">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                      </div>
+                      <span className="text-white text-sm font-bold tracking-wide">Sistem Aktif</span>
                    </div>
-                   <div className="text-white/80 text-xs">Veri akışı sağlanıyor...</div>
+                   <div className="text-white/70 text-xs font-medium">Veri akışı sağlanıyor...</div>
                 </div>
              </div>
           </div>
@@ -118,20 +129,28 @@ const HeroSection = () => {
         </div>
       </div>
 
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+        <div className="w-[30px] h-[50px] rounded-full border-2 border-white/30 flex justify-center p-2">
+          <div className="w-1 h-3 bg-white rounded-full animate-scroll"></div>
+        </div>
+      </div>
+
       {/* Video Modal */}
       {showVideoModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm px-4">
-          <div className="relative w-full max-w-4xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md px-4 p-4">
+          <div className="relative w-full max-w-5xl">
             <button
               onClick={() => setShowVideoModal(false)}
-              className="absolute -top-12 right-0 text-white hover:text-[#00cadc] transition-colors"
+              className="absolute -top-12 right-0 text-white hover:text-[#00cadc] transition-colors group"
             >
-              <X className="w-8 h-8" />
+              <span className="text-sm font-medium mr-2 opacity-0 group-hover:opacity-100 transition-opacity">Kapat</span>
+              <X className="w-8 h-8 inline-block" />
             </button>
-            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+            <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black">
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/AOV6bqpCV6k?si=IZxCfw4yzYCDY5f_"
+                src="https://www.youtube.com/embed/AOV6bqpCV6k?si=IZxCfw4yzYCDY5f_&autoplay=1"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
