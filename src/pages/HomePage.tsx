@@ -121,11 +121,9 @@ const HomePage = () => {
             <ComparisonSlider />
           </div>
         </ScrollReveal>
-        <ScrollReveal direction="scale" delay={180}>
-          <div id="integrations">
-            <IntegrationsSection />
-          </div>
-        </ScrollReveal>
+        <div id="integrations">
+          <IntegrationsSection />
+        </div>
         <div id="mobile">
           <MobileSection />
         </div>
