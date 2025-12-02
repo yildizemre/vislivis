@@ -103,10 +103,10 @@ const HeroSection = () => {
              <div className="absolute -top-20 -right-20 w-96 h-96 bg-[#00cadc]/20 rounded-full blur-[100px] animate-pulse pointer-events-none"></div>
              <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-purple-500/20 rounded-full blur-[100px] animate-pulse delay-1000 pointer-events-none"></div>
              
-             {/* Image Container - Logo Shape (Square with rounded bottom-left) */}
+             {/* Image Container - Logo Shape (Square with large rounded bottom-left to match logo mark) */}
              <div className="relative overflow-hidden shadow-2xl shadow-black/50 group transition-all duration-700 hover:-translate-y-2"
                   style={{ 
-                    borderRadius: '24px 24px 24px 200px' // Sharp corners with one large rounded corner matching the logo mark
+                    borderRadius: '8px 8px 8px 200px' // Sharp top-left, top-right, bottom-right (small radius for smoothness), Huge Bottom-Left
                   }}
              >
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/60 via-transparent to-transparent z-10"></div>

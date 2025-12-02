@@ -48,11 +48,11 @@ const LogosSection = () => {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-cyan-50/20 relative overflow-hidden">
+    <section className="py-20 md:py-32 bg-[#0f172a] relative overflow-hidden">
       {/* Grid Background Pattern */}
       <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-                           linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                           linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px)`,
           backgroundSize: '40px 40px'
       }}></div>
 
@@ -60,10 +60,10 @@ const LogosSection = () => {
         
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-white border border-slate-200 rounded-full text-slate-500 text-xs font-bold tracking-[0.2em] uppercase mb-6 shadow-sm">
+          <div className="inline-flex items-center px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-200 text-xs font-bold tracking-[0.2em] uppercase mb-6 shadow-sm backdrop-blur-sm">
             REFERANSLARIMIZ
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
             Perakende liderlerinin Vislivis deneyimi
           </h2>
         </div>
@@ -73,20 +73,20 @@ const LogosSection = () => {
           {/* Navigation Buttons */}
           <button 
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 lg:-translate-x-16 z-20 bg-white hover:bg-slate-50 text-slate-700 p-4 rounded-full shadow-lg border border-slate-100 transition-all duration-300 hover:scale-110 focus:outline-none"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 lg:-translate-x-16 z-20 bg-white/10 hover:bg-white/20 text-white p-4 rounded-full shadow-lg border border-white/10 transition-all duration-300 hover:scale-110 focus:outline-none backdrop-blur-md"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           
           <button 
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 lg:translate-x-16 z-20 bg-white hover:bg-slate-50 text-slate-700 p-4 rounded-full shadow-lg border border-slate-100 transition-all duration-300 hover:scale-110 focus:outline-none"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 lg:translate-x-16 z-20 bg-white/10 hover:bg-white/20 text-white p-4 rounded-full shadow-lg border border-white/10 transition-all duration-300 hover:scale-110 focus:outline-none backdrop-blur-md"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
 
           {/* Card */}
-          <div className="bg-white rounded-[2.5rem] p-8 md:p-12 lg:p-16 shadow-xl border border-slate-100 relative overflow-hidden min-h-[500px] flex flex-col justify-center">
+          <div className="bg-white rounded-[2.5rem] p-8 md:p-12 lg:p-16 shadow-2xl shadow-black/20 border border-white/10 relative overflow-hidden min-h-[500px] flex flex-col justify-center">
             {/* Background Quote Icon */}
             <div className="absolute top-10 right-10 opacity-5">
                <Quote className="w-40 h-40 text-slate-900" />
@@ -152,17 +152,17 @@ const LogosSection = () => {
 
         {/* Logos Grid (Bottom) */}
         <div className="text-center mb-12">
-          <h3 className="text-xs font-bold tracking-[0.2em] text-blue-300 uppercase mb-8">
+          <h3 className="text-xs font-bold tracking-[0.2em] text-slate-400 uppercase mb-8">
             ÖNDE GELEN PERAKENDE ZİNCİRLERİNİN TERCİHİ
           </h3>
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12 items-center justify-items-center opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12 items-center justify-items-center opacity-70 hover:opacity-100 transition-all duration-500">
               {logos.map((logo) => (
                 <div
                   key={logo.name}
                   className="w-full flex items-center justify-center group cursor-pointer"
                 >
-                  <div className={`text-xl md:text-2xl font-bold bg-gradient-to-r ${logo.color} bg-clip-text text-transparent transition-all duration-300 transform group-hover:scale-110`}>
+                  <div className={`text-xl md:text-2xl font-bold bg-gradient-to-r ${logo.color} bg-clip-text text-transparent transition-all duration-300 transform group-hover:scale-110 filter brightness-125`}>
                     {logo.name}
                   </div>
                 </div>
