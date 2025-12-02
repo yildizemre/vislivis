@@ -97,16 +97,16 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Column: Image with Logo Shape Mask */}
+          {/* Right Column: Image with 2-Part Logo Shape */}
           <div className="hidden lg:block lg:col-span-5 relative">
              {/* Decorative Elements */}
              <div className="absolute -top-20 -right-20 w-96 h-96 bg-[#00cadc]/20 rounded-full blur-[100px] animate-pulse pointer-events-none"></div>
              <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-purple-500/20 rounded-full blur-[100px] animate-pulse delay-1000 pointer-events-none"></div>
              
-             {/* Image Container - Exact Logo Shape (Only bottom-left rounded) */}
-             <div className="relative overflow-hidden shadow-2xl shadow-black/50 group transition-all duration-700 hover:-translate-y-2 rounded-tl-none rounded-tr-none rounded-br-none"
+             {/* Image Container - 2-Part Logo Shape (Large square with small accent piece) */}
+             <div className="relative overflow-hidden shadow-2xl shadow-black/50 group transition-all duration-700 hover:-translate-y-2"
                   style={{ 
-                    borderRadius: '0 0 0 200px' // Only bottom-left corner rounded, matching the logo exactly
+                    borderRadius: '0 0 0 140px' // Large rounded bottom-left corner
                   }}
              >
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/60 via-transparent to-transparent z-10"></div>
@@ -115,6 +115,13 @@ const HeroSection = () => {
                   alt="Retail Analytics Dashboard" 
                   className="w-full h-[600px] object-cover transform group-hover:scale-110 transition-transform duration-1000"
                 />
+                
+                {/* Small decorative accent piece (mimicking the 2nd part of the logo) */}
+                <div className="absolute bottom-0 left-0 w-16 h-16 bg-[#0f172a] z-20" 
+                     style={{ 
+                       borderRadius: '0 140px 0 0' // Matching curve to create the "notch" effect
+                     }}
+                ></div>
                 
                 {/* Floating UI Elements on Image */}
                 <div className="absolute bottom-12 right-8 z-20 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-5 shadow-lg max-w-[200px]">
