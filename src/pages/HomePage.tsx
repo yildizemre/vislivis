@@ -93,6 +93,7 @@ const HomePage = () => {
       <ScrollReveal direction="up" delay={60}>
         <HeroSection />
       </ScrollReveal>
+      <LogosSection />
       <ScrollReveal direction="right" delay={140}>
         <RetailFeaturesSection />
       </ScrollReveal>
@@ -105,7 +106,6 @@ const HomePage = () => {
             <UseCasesSection />
           </div>
         </ScrollReveal>
-        <LogosSection />
         <ScrollReveal direction="up" delay={160}>
           <div id="analytics">
             <AnalyticsDashboardSection />

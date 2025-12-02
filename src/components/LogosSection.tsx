@@ -17,14 +17,14 @@ const LogosSection = () => {
     },
     {
       company: 'Beymen',
-      titleColor: 'text-slate-900',
+      titleColor: 'text-[#1a237e]',
       text: "Vislivis panelleri, premium müşteri yolculuğunu gerçek zamanlı görmemizi sağlıyor. Kasada bekleme sürelerini ve VIP alanlardaki yoğunluğu saniyeler içinde ölçebildiğimiz için müşteri memnuniyetinde belirgin artış yakaladık.",
       metric: "2.5x Dönüşüm Artışı",
       metricSub: "Beymen, VIP müşteri memnuniyetini %24 yükseltti.",
       author: "Mert Yalçın",
       role: "Müşteri Deneyimi Lideri, Beymen",
-      logoBg: "bg-white",
-      logoColor: "text-slate-900"
+      logoBg: "bg-indigo-50",
+      logoColor: "text-[#1a237e]"
     }
   ];
 
@@ -37,11 +37,11 @@ const LogosSection = () => {
   };
 
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-b from-slate-50 via-white to-slate-50 relative overflow-hidden">
-      {/* Subtle Grid Background */}
-      <div className="absolute inset-0 opacity-30" style={{
-          backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-                           linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px)`,
+    <section className="py-20 md:py-32 bg-gradient-to-b from-slate-800 via-slate-900 to-slate-800 relative overflow-hidden">
+      {/* Grid Background Pattern */}
+      <div className="absolute inset-0 opacity-20" style={{
+          backgroundImage: `linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                           linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px)`,
           backgroundSize: '40px 40px'
       }}></div>
 
@@ -49,65 +49,65 @@ const LogosSection = () => {
         
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-white border border-slate-200 rounded-full text-slate-500 text-xs font-bold tracking-[0.2em] uppercase mb-6 shadow-sm">
+          <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-slate-300 text-xs font-bold tracking-[0.2em] uppercase mb-6 shadow-sm">
             REFERANSLARIMIZ
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
             Perakende liderlerinin Vislivis deneyimi
           </h2>
         </div>
 
         {/* Slider Component */}
-        <div className="max-w-4xl mx-auto relative">
+        <div className="max-w-5xl mx-auto relative">
           {/* Navigation Buttons */}
           <button 
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 z-20 bg-white hover:bg-slate-50 text-slate-600 p-3 rounded-full shadow-md border border-slate-200 transition-all duration-300 hover:scale-110 focus:outline-none"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 lg:-translate-x-16 z-20 bg-white hover:bg-slate-50 text-slate-700 p-4 rounded-full shadow-lg border border-slate-100 transition-all duration-300 hover:scale-110 focus:outline-none"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-6 h-6" />
           </button>
           
           <button 
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 z-20 bg-white hover:bg-slate-50 text-slate-600 p-3 rounded-full shadow-md border border-slate-200 transition-all duration-300 hover:scale-110 focus:outline-none"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 lg:translate-x-16 z-20 bg-white hover:bg-slate-50 text-slate-700 p-4 rounded-full shadow-lg border border-slate-100 transition-all duration-300 hover:scale-110 focus:outline-none"
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-6 h-6" />
           </button>
 
-          {/* Card - Light, clean design */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-[2rem] p-10 md:p-14 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-slate-100 relative overflow-hidden">
-            {/* Large Quote Icon - Very subtle */}
-            <div className="absolute top-8 right-8 opacity-[0.03]">
-               <Quote className="w-32 h-32 text-slate-900" />
+          {/* Card */}
+          <div className="bg-white rounded-[2.5rem] p-8 md:p-12 lg:p-16 shadow-xl border border-slate-100 relative overflow-hidden min-h-[500px] flex flex-col justify-center">
+            {/* Background Quote Icon */}
+            <div className="absolute top-10 right-10 opacity-5">
+               <Quote className="w-40 h-40 text-slate-900" />
             </div>
 
             <div className="relative z-10 transition-opacity duration-500 ease-in-out" key={currentSlide}>
-              <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+              <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
                 
-                {/* Logo Box - Clean white box */}
-                <div className={`w-28 h-28 md:w-32 md:h-32 ${testimonials[currentSlide].logoBg} rounded-2xl flex items-center justify-center shrink-0 shadow-sm border border-slate-100`}>
-                   <span className={`text-xl md:text-2xl font-bold ${testimonials[currentSlide].logoColor} tracking-tight`}>
+                {/* Logo Box */}
+                <div className={`w-32 h-32 md:w-40 md:h-40 ${testimonials[currentSlide].logoBg} rounded-3xl flex items-center justify-center shrink-0 shadow-inner`}>
+                   <span className={`text-2xl md:text-3xl font-bold ${testimonials[currentSlide].logoColor}`}>
                      {testimonials[currentSlide].company}
                    </span>
                 </div>
 
                 {/* Content */}
                 <div className="flex-1">
-                   <div className="mb-6">
-                      <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
+                   <div className="mb-2">
+                      <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
                         {testimonials[currentSlide].company}
                       </h3>
-                      <p className="text-slate-500 text-xs font-medium uppercase tracking-wider">
+                      <p className="text-slate-500 text-sm font-medium uppercase tracking-wide">
                         {testimonials[currentSlide].role}
                       </p>
                    </div>
 
-                   <blockquote className="text-lg md:text-xl text-slate-600 font-light leading-relaxed mb-6">
+                   <blockquote className="text-xl md:text-2xl text-slate-600 font-light leading-relaxed italic my-8">
                      "{testimonials[currentSlide].text}"
                    </blockquote>
 
-                   <div className="space-y-1 pt-4">
-                      <p className="text-[#00cadc] font-bold text-base tracking-wide">
+                   <div className="space-y-2 border-t border-slate-100 pt-6">
+                      <p className="text-[#00cadc] font-bold text-lg tracking-wide">
                         {testimonials[currentSlide].metric}
                       </p>
                       {testimonials[currentSlide].metricSub && (
@@ -125,14 +125,14 @@ const LogosSection = () => {
             </div>
           </div>
 
-          {/* Dots - Subtle */}
-          <div className="flex justify-center space-x-2 mt-8">
+          {/* Dots */}
+          <div className="flex justify-center space-x-3 mt-8">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  currentSlide === index ? 'bg-[#00cadc] w-6' : 'bg-slate-300 w-2 hover:bg-slate-400'
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  currentSlide === index ? 'bg-[#00cadc] w-8' : 'bg-slate-400 hover:bg-slate-300'
                 }`}
               />
             ))}
