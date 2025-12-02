@@ -27,7 +27,7 @@ const ComparisonSlider = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-br from-white via-slate-50 to-white relative overflow-hidden">
       <div className="container mx-auto px-8">
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-blue-50 border border-blue-100 rounded-full text-blue-700 text-sm font-medium mb-6">
@@ -44,13 +44,13 @@ const ComparisonSlider = () => {
         <div className="max-w-6xl mx-auto">
           <div
             ref={containerRef}
-            className="relative w-full h-[650px] rounded-3xl overflow-hidden shadow-2xl cursor-ew-resize select-none ring-1 ring-slate-200"
+            className="relative w-full h-[700px] rounded-3xl overflow-hidden shadow-2xl cursor-ew-resize select-none ring-1 ring-slate-200"
             onMouseMove={handleMouseMove}
             onTouchMove={handleTouchMove}
           >
             {/* Common Layout Structure for perfect alignment */}
             {/* Before Image (Without AI) */}
-            <div className="absolute inset-0 bg-slate-100">
+            <div className="absolute inset-0 bg-slate-50">
               <div className="absolute inset-0 opacity-10" style={{
                 backgroundImage: 'radial-gradient(#000 1px, transparent 1px)',
                 backgroundSize: '24px 24px'
@@ -68,7 +68,7 @@ const ComparisonSlider = () => {
                   </div>
 
                   {/* Content List - Same height/spacing as After */}
-                  <div className="space-y-4 mb-8">
+                  <div className="space-y-3 mb-8">
                     <div className="flex items-center p-3 bg-red-50/50 rounded-xl border border-red-100/50">
                       <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mr-4 text-red-500 shrink-0">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -86,6 +86,18 @@ const ComparisonSlider = () => {
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                       </div>
                       <span className="text-slate-600 font-medium">Tahmine Dayalı Kararlar</span>
+                    </div>
+                    <div className="flex items-center p-3 bg-red-50/50 rounded-xl border border-red-100/50">
+                      <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mr-4 text-red-500 shrink-0">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                      </div>
+                      <span className="text-slate-600 font-medium">Yüksek Operasyonel Maliyet</span>
+                    </div>
+                    <div className="flex items-center p-3 bg-red-50/50 rounded-xl border border-red-100/50">
+                      <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mr-4 text-red-500 shrink-0">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                      </div>
+                      <span className="text-slate-600 font-medium">Sınırlı Müşteri Analizi</span>
                     </div>
                   </div>
 
@@ -129,7 +141,7 @@ const ComparisonSlider = () => {
                   </div>
 
                   {/* Content List */}
-                  <div className="space-y-4 mb-8">
+                  <div className="space-y-3 mb-8">
                     <div className="flex items-center p-3 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
                       <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center mr-4 text-green-400 shrink-0">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -147,6 +159,18 @@ const ComparisonSlider = () => {
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                       </div>
                       <span className="text-white font-medium">Veriye Dayalı Büyüme</span>
+                    </div>
+                    <div className="flex items-center p-3 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+                      <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center mr-4 text-green-400 shrink-0">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </div>
+                      <span className="text-white font-medium">Düşük Maliyet, Yüksek Verim</span>
+                    </div>
+                    <div className="flex items-center p-3 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+                      <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center mr-4 text-green-400 shrink-0">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </div>
+                      <span className="text-white font-medium">Kapsamlı Davranış Analizi</span>
                     </div>
                   </div>
 
