@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { ArrowRight, Play, X } from 'lucide-react';
 import { useCountUp } from '../hooks/useCountUp';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const HeroSection = () => {
+  const { t } = useLanguage();
   const [showVideoModal, setShowVideoModal] = useState(false);
   
   const accuracy = useCountUp({ end: 95.2, duration: 2500, decimals: 1, suffix: '%' });
@@ -65,7 +67,7 @@ const HeroSection = () => {
                 }}
                 className="px-10 py-5 bg-[#00cadc] hover:bg-cyan-500 text-white text-lg font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(0,202,220,0.3)] hover:shadow-[0_0_30px_rgba(0,202,220,0.5)] hover:-translate-y-1"
               >
-                <span>Ücretsiz Deneyin</span>
+                <span>{t('hero.tryFree')}</span>
                 <ArrowRight className="w-6 h-6" />
               </button>
 
@@ -76,7 +78,7 @@ const HeroSection = () => {
                 <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
                    <Play className="w-4 h-4 fill-current" />
                 </div>
-                <span>İzleyin</span>
+                <span>{t('hero.watch')}</span>
               </button>
             </div>
 
@@ -84,15 +86,15 @@ const HeroSection = () => {
             <div className="grid grid-cols-3 gap-8 pt-10 border-t border-white/10 max-w-3xl">
               <div ref={accuracy.ref}>
                 <div className="text-4xl lg:text-5xl font-bold text-white mb-2">{accuracy.value}</div>
-                <div className="text-xs text-slate-400 uppercase tracking-wider font-bold">Doğruluk</div>
+                <div className="text-xs text-slate-400 uppercase tracking-wider font-bold">{t('hero.accuracyLabel')}</div>
               </div>
               <div>
                 <div className="text-4xl lg:text-5xl font-bold text-white mb-2">24/7</div>
-                <div className="text-xs text-slate-400 uppercase tracking-wider font-bold">Gerçek Zamanlı</div>
+                <div className="text-xs text-slate-400 uppercase tracking-wider font-bold">{t('hero.realTimeLabel')}</div>
               </div>
               <div ref={stores.ref}>
                 <div className="text-4xl lg:text-5xl font-bold text-white mb-2">{stores.value}</div>
-                <div className="text-xs text-slate-400 uppercase tracking-wider font-bold">Aktif Mağaza</div>
+                <div className="text-xs text-slate-400 uppercase tracking-wider font-bold">{t('hero.activeStoresLabel')}</div>
               </div>
             </div>
           </div>
@@ -115,7 +117,7 @@ const HeroSection = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/60 via-transparent to-transparent z-20"></div>
                   
                   {/* White Curtain Overlay (Subtle transparency) */}
-                  <div className="absolute inset-0 bg-white/45 z-10 pointer-events-none transition-opacity duration-500 group-hover:opacity-0"></div>
+                  <div className="absolute inset-0 bg-white/35 z-10 pointer-events-none transition-opacity duration-500 group-hover:opacity-0"></div>
 
                   <img 
                     src="/costumer_home.jpeg" 
@@ -163,13 +165,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
-        <div className="w-[30px] h-[50px] rounded-full border-2 border-white/30 flex justify-center p-2">
-          <div className="w-1 h-3 bg-white rounded-full animate-scroll"></div>
-        </div>
-      </div>
-
       {/* Video Modal */}
       {showVideoModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md px-4 p-4">
@@ -185,7 +180,7 @@ const HeroSection = () => {
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
                 src="https://www.youtube.com/embed/AOV6bqpCV6k?si=IZxCfw4yzYCDY5f_&autoplay=1"
-                title="YouTube video player"
+                title="YouTube video player"{('hero.close')}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"

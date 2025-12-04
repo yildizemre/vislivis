@@ -252,7 +252,7 @@ const Header = () => {
               {t('nav.pricing')}
             </button>
             <button
-              onClick={() => scrollToSection('blog')}
+              onClick={() => navigate('/blog')}
               className={`${linkClass} px-3 py-2 rounded-xl hover:bg-cyan-50 hover:text-cyan-600`}
             >
               Blog
@@ -337,10 +337,13 @@ const Header = () => {
                 {t('nav.pricing')}
               </button>
               <button
-                onClick={() => scrollToSection('blog')}
+                onClick={() => {
+                  navigate('/blog');
+                  setIsMobileMenuOpen(false);
+                }}
                 className="w-full text-left text-gray-700 hover:text-cyan-600 font-medium transition-colors"
               >
-                Blog
+                {t('nav.blog')}
               </button>
               <button
                 onClick={() => scrollToSection('references')}

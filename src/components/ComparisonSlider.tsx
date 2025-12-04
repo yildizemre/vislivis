@@ -1,4 +1,5 @@
 import { useState, useRef, MouseEvent, TouchEvent } from 'react';
+import { TrendingUp } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const ComparisonSlider = () => {
@@ -64,7 +65,7 @@ const ComparisonSlider = () => {
                         <span className="text-4xl grayscale opacity-70">📉</span>
                      </div>
                      <h3 className="text-2xl font-bold text-slate-700 mb-2">{t('comparison.before.title')}</h3>
-                     <p className="text-slate-400 text-sm">Geleneksel Yöntemler</p>
+                     <p className="text-slate-400 text-sm">{t('comparison.before.subtitle')}</p>
                   </div>
 
                   {/* Content List - Same height/spacing as After */}
@@ -73,31 +74,31 @@ const ComparisonSlider = () => {
                       <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mr-4 text-red-500 shrink-0">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                       </div>
-                      <span className="text-slate-600 font-medium">Manuel Veri Toplama</span>
+                      <span className="text-slate-600 font-medium">{t('comparison.before.list1')}</span>
                     </div>
                     <div className="flex items-center p-3 bg-red-50/50 rounded-xl border border-red-100/50">
                       <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mr-4 text-red-500 shrink-0">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                       </div>
-                      <span className="text-slate-600 font-medium">Gecikmeli İçgörüler</span>
+                      <span className="text-slate-600 font-medium">{t('comparison.before.list2')}</span>
                     </div>
                     <div className="flex items-center p-3 bg-red-50/50 rounded-xl border border-red-100/50">
                       <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mr-4 text-red-500 shrink-0">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                       </div>
-                      <span className="text-slate-600 font-medium">Tahmine Dayalı Kararlar</span>
+                      <span className="text-slate-600 font-medium">{t('comparison.before.list3')}</span>
                     </div>
                     <div className="flex items-center p-3 bg-red-50/50 rounded-xl border border-red-100/50">
                       <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mr-4 text-red-500 shrink-0">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                       </div>
-                      <span className="text-slate-600 font-medium">Yüksek Operasyonel Maliyet</span>
+                      <span className="text-slate-600 font-medium">{t('comparison.before.list4')}</span>
                     </div>
                     <div className="flex items-center p-3 bg-red-50/50 rounded-xl border border-red-100/50">
                       <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mr-4 text-red-500 shrink-0">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                       </div>
-                      <span className="text-slate-600 font-medium">Sınırlı Müşteri Analizi</span>
+                      <span className="text-slate-600 font-medium">{t('comparison.before.list5')}</span>
                     </div>
                   </div>
 
@@ -105,11 +106,11 @@ const ComparisonSlider = () => {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="p-4 bg-slate-50 rounded-2xl text-center">
                       <div className="text-xl font-bold text-slate-400">-40%</div>
-                      <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mt-1">Verimlilik</div>
+                      <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mt-1">{t('comparison.stats.efficiencyLabel')}</div>
                     </div>
                     <div className="p-4 bg-slate-50 rounded-2xl text-center">
                        <div className="text-xl font-bold text-slate-400">-60%</div>
-                       <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mt-1">Hız</div>
+                       <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mt-1">{t('comparison.stats.speedLabel')}</div>
                     </div>
                   </div>
                 </div>
@@ -134,10 +135,10 @@ const ComparisonSlider = () => {
                   {/* Header */}
                   <div className="text-center mb-8 pb-6 border-b border-white/10">
                      <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-lg shadow-cyan-500/30 transform -rotate-3">
-                        <span className="text-4xl">🚀</span>
+                        <TrendingUp className="w-10 h-10 text-white" />
                      </div>
                      <h3 className="text-2xl font-bold text-white mb-2">{t('comparison.after.title')}</h3>
-                     <p className="text-blue-200 text-sm">AI Destekli Analitik</p>
+                     <p className="text-blue-200 text-sm">{t('comparison.after.subtitle')}</p>
                   </div>
 
                   {/* Content List */}
@@ -146,31 +147,31 @@ const ComparisonSlider = () => {
                       <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center mr-4 text-green-400 shrink-0">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                       </div>
-                      <span className="text-white font-medium">Otomatik Veri İşleme</span>
+                      <span className="text-white font-medium">{t('comparison.after.list1')}</span>
                     </div>
                     <div className="flex items-center p-3 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
                       <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center mr-4 text-green-400 shrink-0">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                       </div>
-                      <span className="text-white font-medium">Gerçek Zamanlı İçgörü</span>
+                      <span className="text-white font-medium">{t('comparison.after.list2')}</span>
                     </div>
                     <div className="flex items-center p-3 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
                       <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center mr-4 text-green-400 shrink-0">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                       </div>
-                      <span className="text-white font-medium">Veriye Dayalı Büyüme</span>
+                      <span className="text-white font-medium">{t('comparison.after.list3')}</span>
                     </div>
                     <div className="flex items-center p-3 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
                       <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center mr-4 text-green-400 shrink-0">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                       </div>
-                      <span className="text-white font-medium">Düşük Maliyet, Yüksek Verim</span>
+                      <span className="text-white font-medium">{t('comparison.after.list4')}</span>
                     </div>
                     <div className="flex items-center p-3 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
                       <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center mr-4 text-green-400 shrink-0">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                       </div>
-                      <span className="text-white font-medium">Kapsamlı Davranış Analizi</span>
+                      <span className="text-white font-medium">{t('comparison.after.list5')}</span>
                     </div>
                   </div>
 
@@ -178,11 +179,11 @@ const ComparisonSlider = () => {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="p-4 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl text-center border border-blue-500/20">
                       <div className="text-xl font-bold text-cyan-300">+85%</div>
-                      <div className="text-[10px] font-bold text-blue-200 uppercase tracking-wider mt-1">Gelir Artışı</div>
+                      <div className="text-[10px] font-bold text-blue-200 uppercase tracking-wider mt-1">{t('comparison.stats.revenueLabel')}</div>
                     </div>
                     <div className="p-4 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl text-center border border-purple-500/20">
                        <div className="text-xl font-bold text-purple-300">120%</div>
-                       <div className="text-[10px] font-bold text-purple-200 uppercase tracking-wider mt-1">ROI</div>
+                       <div className="text-[10px] font-bold text-purple-200 uppercase tracking-wider mt-1">{t('comparison.stats.roiLabel')}</div>
                     </div>
                   </div>
                 </div>

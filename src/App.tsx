@@ -16,6 +16,7 @@ import SupportCenterPage from './pages/SupportCenterPage';
 import SystemStatusPage from './pages/SystemStatusPage';
 import ThankYouPage from './pages/ThankYouPage';
 import BlogDetailPage from './pages/BlogDetailPage';
+import BlogPage from './pages/BlogPage';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="/support-center" element={<SupportCenterPage />} />
             <Route path="/system-status" element={<SystemStatusPage />} />
             <Route path="/tesekkurler" element={<ThankYouPage />} />
+            <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:id" element={<BlogDetailPage />} />
           </Routes>
           <Footer />
