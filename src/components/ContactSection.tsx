@@ -73,8 +73,8 @@ const ContactSection = () => {
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-100">
         <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                           linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+                           linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px)`,
           backgroundSize: '60px 60px'
         }}></div>
       </div>
