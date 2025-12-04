@@ -6,7 +6,7 @@ import { useState } from 'react';
 const BlogDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [showShareMenu, setShowShareMenu] = useState(false);
 
   // Blog yazıları - gerçek projede API'den gelecek
@@ -15,60 +15,6 @@ const BlogDetailPage = () => {
       id: '1',
       title: t('blog.post1.title'),
       excerpt: t('blog.post1.excerpt'),
-      content: `
-        <h2>Retail Analitik Nedir ve Neden Bu Kadar Önemli?</h2>
-        <p>Retail analitik, perakende işletmelerinin müşteri davranışlarını, satış verilerini ve operasyonel metrikleri analiz ederek daha iyi kararlar almasını sağlayan bir süreçtir. Günümüzün dijital çağında, veri odaklı kararlar almak artık bir lüks değil, zorunluluk haline gelmiştir.</p>
-        
-        <h3>Modern Perakendede Veri Devrimi</h3>
-        <p>Son 10 yılda perakende sektörü muazzam bir dönüşüm geçirdi. Geleneksel "tahmin ve deneme" yöntemleri yerini veri odaklı stratejilere bıraktı. Bugün başarılı perakendeciler, her kararlarını somut veriler üzerine inşa ediyorlar.</p>
-        
-        <p>Yapay zeka ve makine öğrenmesi teknolojileri sayesinde, mağaza içi kameralar artık sadece güvenlik amaçlı değil, müşteri davranışlarını anlamak için de kullanılıyor. Bu teknolojiler, müşterilerin mağaza içindeki hareketlerini, hangi ürünlere ilgi gösterdiklerini ve ne kadar süre harcadıklarını detaylı şekilde analiz edebiliyor.</p>
-        
-        <h3>Retail Analitiğin Temel Faydaları</h3>
-        <ul>
-          <li><strong>Müşteri Davranışlarını Derin Anlama:</strong> Hangi ürünlere ilgi gösteriliyor, hangi saatlerde mağaza yoğun, müşteriler mağaza içinde nasıl hareket ediyor? Bu sorulara artık net cevaplar alabiliyorsunuz.</li>
-          <li><strong>Akıllı Stok Optimizasyonu:</strong> Hangi ürünler hızlı tükeniyor, hangilerinde stok fazlası var? Yapay zeka destekli tahminleme ile stok maliyetlerinizi %30'a kadar azaltabilirsiniz.</li>
-          <li><strong>Dinamik Personel Planlaması:</strong> Yoğun saatlerde yeterli personel var mı? Hangi vardiyalarda daha fazla kasiyer gerekiyor? Veriye dayalı personel planlaması ile verimliliği artırın.</li>
-          <li><strong>Kampanya Etkinliği Ölçümü:</strong> Hangi kampanyalar işe yarıyor, hangiler değil? ROI'nizi gerçek zamanlı takip edin ve stratejinizi anında optimize edin.</li>
-          <li><strong>Mağaza Düzeni Optimizasyonu:</strong> Isı haritaları ile en çok ziyaret edilen bölgeleri belirleyin ve ürün yerleşiminizi optimize edin.</li>
-        </ul>
-
-        <h3>Nasıl Başlanır? Adım Adım Rehber</h3>
-        <p>Retail analitiğe başlamak için öncelikle doğru araçlara sahip olmanız gerekiyor. İşte başlangıç için izlemeniz gereken adımlar:</p>
-        
-        <p><strong>1. Mevcut Durumu Analiz Edin:</strong> Hangi verilere zaten sahipsiniz? POS sisteminiz, müşteri sadakat programınız ve mevcut kameralarınız değerli veri kaynakları olabilir.</p>
-        
-        <p><strong>2. Hedeflerinizi Belirleyin:</strong> Satışları artırmak mı istiyorsunuz, stok maliyetlerini azaltmak mı, yoksa müşteri deneyimini iyileştirmek mi? Net hedefler belirleyin.</p>
-        
-        <p><strong>3. Doğru Teknoloji Seçin:</strong> Vislivis gibi AI destekli platformlar, kamera görüntülerini analiz ederek size gerçek zamanlı içgörüler sunar. Kurulum basit, sonuçlar hızlıdır.</p>
-        
-        <p><strong>4. Ekibinizi Eğitin:</strong> Veri okuryazarlığı kritik öneme sahiptir. Ekibinizin verileri doğru yorumlamasını ve aksiyona dönüştürmesini sağlayın.</p>
-
-        <h3>Gerçek Başarı Hikayeleri</h3>
-        <p>Bir ulusal süpermarket zinciri, Vislivis kullanarak 6 ay içinde şu sonuçları elde etti:</p>
-        <ul>
-          <li><strong>Satışlarda %40 artış:</strong> Ürün yerleşimi optimizasyonu ve dinamik fiyatlandırma ile</li>
-          <li><strong>Stok maliyetlerinde %25 azalma:</strong> Tahmine dayalı stok yönetimi ile</li>
-          <li><strong>Müşteri memnuniyetinde %35 yükseliş:</strong> Bekleme sürelerinin azaltılması ve personel optimizasyonu ile</li>
-          <li><strong>Personel verimliliğinde %28 iyileşme:</strong> Veri odaklı vardiya planlaması ile</li>
-        </ul>
-
-        <p>Bir moda perakendecisi ise ısı haritası analizleri sayesinde mağaza düzenini yeniden tasarladı ve ayak trafiğini %50 artırdı. En az ziyaret edilen köşelere premium ürünleri yerleştirerek, bu alanların satışlarını 3 katına çıkardı.</p>
-
-        <h3>Gelecek Trendleri</h3>
-        <p>Retail analitik alanında heyecan verici gelişmeler bizi bekliyor:</p>
-        <ul>
-          <li><strong>Gerçek Zamanlı Kişiselleştirme:</strong> Müşteri mağazaya girdiği anda, geçmiş alışveriş geçmişine göre özel teklifler</li>
-          <li><strong>Tahmine Dayalı Analitik:</strong> Gelecek trendleri önceden görerek stok ve kampanya kararları alma</li>
-          <li><strong>Ses ve Duygu Analizi:</strong> Müşteri memnuniyetini ses tonu ve yüz ifadelerinden anlama</li>
-          <li><strong>IoT Entegrasyonu:</strong> Akıllı raflar, sensörler ve beacon'lar ile daha detaylı veri toplama</li>
-        </ul>
-
-        <h3>Sonuç: Geleceğe Hazır Olun</h3>
-        <p>Retail analitik, modern perakendenin olmazsa olmazı haline geldi. Doğru araçlar ve stratejilerle, rakiplerinizin önüne geçebilir ve müşterilerinize daha iyi hizmet sunabilirsiniz. Unutmayın, veri yeni petroldür - ama sadece doğru şekilde işlendiğinde değer yaratır.</p>
-        
-        <p>Vislivis ile retail analitik yolculuğunuza bugün başlayın ve farkı hemen görün. İlk 30 gün ücretsiz deneme fırsatını kaçırmayın!</p>
-      `,
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
       category: 'analytics',
       date: '2024-11-10',
@@ -76,64 +22,36 @@ const BlogDetailPage = () => {
       author: {
         name: 'Ahmet Yılmaz',
         avatar: '/avatars/ahmet.jpg',
-        bio: 'Retail Analytics Uzmanı, 10+ yıl deneyim'
-      }
+        bio: 'Retail Analytics Uzmanı'
+      },
+      content: language === 'tr' ? `
+        <h2>Retail Analitik Nedir ve Neden Bu Kadar Önemli?</h2>
+        <p>Retail analitik, perakende işletmelerinin müşteri davranışlarını, satış verilerini ve operasyonel metrikleri analiz ederek daha iyi kararlar almasını sağlayan bir süreçtir.</p>
+        <h3>Modern Perakendede Veri Devrimi</h3>
+        <p>Son 10 yılda perakende sektörü muazzam bir dönüşüm geçirdi. Geleneksel "tahmin ve deneme" yöntemleri yerini veri odaklı stratejilere bıraktı.</p>
+        <ul>
+          <li><strong>Müşteri Davranışlarını Derin Anlama:</strong> Hangi ürünlere ilgi gösteriliyor?</li>
+          <li><strong>Akıllı Stok Optimizasyonu:</strong> Hangi ürünler hızlı tükeniyor?</li>
+          <li><strong>Dinamik Personel Planlaması:</strong> Yoğun saatlerde yeterli personel var mı?</li>
+        </ul>
+        <p>Vislivis ile retail analitik yolculuğunuza bugün başlayın.</p>
+      ` : `
+        <h2>What is Retail Analytics and Why is it Important?</h2>
+        <p>Retail analytics is the process of providing analytical data on inventory levels, supply chain movement, consumer demand, and sales.</p>
+        <h3>The Data Revolution in Modern Retail</h3>
+        <p>In the last decade, the retail sector has undergone a massive transformation. Traditional "guess and check" methods have given way to data-driven strategies.</p>
+        <ul>
+          <li><strong>Deep Understanding of Customer Behavior:</strong> Which products are getting attention?</li>
+          <li><strong>Smart Inventory Optimization:</strong> Which products are selling out fast?</li>
+          <li><strong>Dynamic Staff Planning:</strong> Do you have enough staff during peak hours?</li>
+        </ul>
+        <p>Start your retail analytics journey with Vislivis today.</p>
+      `
     },
     {
       id: '2',
       title: t('blog.post2.title'),
       excerpt: t('blog.post2.excerpt'),
-      content: `
-        <h2>Yapay Zeka Perakende Sektörünü Nasıl Dönüştürüyor?</h2>
-        <p>Yapay zeka (AI) artık bilim kurgu filmlerinin konusu değil - perakende sektöründe günlük operasyonların ayrılmaz bir parçası haline geldi. Amazon Go mağazalarından Alibaba'nın FashionAI mağazalarına kadar, AI destekli perakende deneyimleri dünya çapında yayılıyor.</p>
-        
-        <h3>AI'ın Perakendedeki 5 Temel Kullanım Alanı</h3>
-        
-        <h4>1. Akıllı Müşteri Deneyimi</h4>
-        <p>Yapay zeka, her müşteriye özel bir alışveriş deneyimi sunmayı mümkün kılıyor. Geçmiş satın alma davranışları, göz atma geçmişi ve demografik bilgiler analiz edilerek, müşteriye tam ihtiyacı olan ürünler öneriliyor.</p>
-        
-        <p>Örneğin, bir müşteri mağazanın spor giyim bölümünde 5 dakikadan fazla vakit geçiriyorsa, AI sistemi bunu algılayıp mobil uygulaması üzerinden o bölümdeki indirimli ürünleri gösterebilir. Bu tür kişiselleştirmeler, dönüşüm oranlarını %35'e kadar artırabiliyor.</p>
-        
-        <h4>2. Tahmine Dayalı Stok Yönetimi</h4>
-        <p>Geleneksel stok yönetimi yöntemleri genellikle geçmiş verilere dayanır. AI ise hava durumu, yerel etkinlikler, sosyal medya trendleri ve daha pek çok faktörü analiz ederek gelecekteki talebi tahmin eder.</p>
-        
-        <p>Bir süpermarket zinciri, AI destekli tahminleme ile stok tükenmelerini %40 azalttı ve aynı zamanda fazla stok maliyetlerini %30 düşürdü. Sistem, tatil günlerini, okul tatillerini ve hatta yerel spor müsabakalarını bile hesaba katarak stok siparişlerini optimize ediyor.</p>
-        
-        <h4>3. Dinamik Fiyatlandırma</h4>
-        <p>AI, rakip fiyatlarını, talep değişimlerini ve stok seviyelerini gerçek zamanlı analiz ederek optimal fiyatlandırma stratejisi belirler. Bu sayede hem kar marjları korunur hem de rekabetçi kalınır.</p>
-        
-        <p>E-ticaret devleri bu teknolojiyi yıllardır kullanıyor, ancak artık fiziksel mağazalar da dijital fiyat etiketleri sayesinde aynı esnekliğe sahip olabiliyor. Bir elektronik perakendecisi, dinamik fiyatlandırma ile kar marjını %8 artırırken, satış hacmini de %15 yükseltti.</p>
-        
-        <h4>4. Görüntü Tanıma ve Raf Analizi</h4>
-        <p>AI destekli kameralar, rafların doluluk oranını, ürün yerleşimini ve planogram uyumunu otomatik olarak kontrol eder. Bir ürün tükendiğinde veya yanlış yere yerleştirildiğinde, sistem anında personeli uyarır.</p>
-        
-        <p>Ayrıca, müşterilerin hangi ürünleri eline aldığını ama almadığını da tespit edebilir. Bu bilgi, ürün ambalajının, fiyatlandırmanın veya yerleşiminin iyileştirilmesi için kullanılabilir.</p>
-        
-        <h4>5. Kasiyersiz Mağazalar</h4>
-        <p>Amazon Go'nun öncülük ettiği kasiyersiz mağaza konsepti, AI ve bilgisayarlı görü teknolojilerinin doruk noktası. Müşteriler mağazaya girip istedikleri ürünleri alıyor ve çıkıyorlar - ödeme otomatik olarak yapılıyor.</p>
-        
-        <p>Bu teknoloji sadece büyük şirketlerin erişebileceği bir lüks değil artık. Orta ölçekli perakendeciler de benzer sistemleri uygulamaya başladı ve bekleme sürelerini neredeyse sıfıra indirdi.</p>
-
-        <h3>AI İmplementasyonunda Dikkat Edilmesi Gerekenler</h3>
-        
-        <p><strong>Veri Kalitesi:</strong> AI sistemleri ancak kaliteli veri ile eğitilirse doğru sonuçlar verir. Veri toplama süreçlerinizi KVKK ve GDPR uyumlu şekilde yapılandırın.</p>
-        
-        <p><strong>Ekip Eğitimi:</strong> AI araçları ne kadar gelişmiş olursa olsun, onları kullanan insanlar olmadan değersizdir. Ekibinizi AI araçlarını kullanma ve sonuçları yorumlama konusunda eğitin.</p>
-        
-        <p><strong>Aşamalı Geçiş:</strong> Tüm operasyonunuzu bir anda AI'a devretmeyin. Küçük pilot projelerle başlayın, sonuçları ölçün ve başarılı olanları ölçeklendirin.</p>
-        
-        <p><strong>Müşteri Gizliliği:</strong> AI kullanırken müşteri gizliliğini ön planda tutun. Hangi verileri topladığınızı ve nasıl kullandığınızı şeffaf bir şekilde paylaşın.</p>
-
-        <h3>Gelecek: AI ve İnsan İşbirliği</h3>
-        <p>AI'ın amacı insanların yerini almak değil, onları güçlendirmektir. En başarılı perakende operasyonları, AI'ın veri analizi ve tahminleme gücünü, insanların yaratıcılığı ve empati yetenekleri ile birleştiren operasyonlardır.</p>
-        
-        <p>Örneğin, AI bir müşterinin memnuniyetsiz olduğunu tespit edebilir, ancak o müşteriyi memnun etmek için gereken empati ve yaratıcılık hala insanlara aittir. AI, personelin doğru zamanda doğru yerde olmasını sağlar; personel ise müşteri deneyimini mükemmelleştirir.</p>
-
-        <h3>Sonuç: Geleceğe Hazır Olun</h3>
-        <p>Yapay zeka perakende sektöründe artık bir "nice to have" değil, "must have" haline geldi. Rakipleriniz muhtemelen zaten AI yatırımları yapıyor. Geride kalmamak için bugün harekete geçin.</p>
-        
-        <p>Vislivis'in AI destekli retail analitik platformu ile geleceğin perakende deneyimini bugün yaşayın. Ücretsiz demo için hemen iletişime geçin!</p>
-      `,
       image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop',
       category: 'ai',
       date: '2024-11-08',
@@ -142,7 +60,164 @@ const BlogDetailPage = () => {
         name: 'Ayşe Demir',
         avatar: '/avatars/ayse.jpg',
         bio: 'AI & Machine Learning Uzmanı'
-      }
+      },
+      content: language === 'tr' ? `
+        <h2>Yapay Zeka Perakende Sektörünü Nasıl Dönüştürüyor?</h2>
+        <p>Yapay zeka (AI) artık bilim kurgu filmlerinin konusu değil - perakende sektöründe günlük operasyonların ayrılmaz bir parçası haline geldi.</p>
+        <h3>AI'ın Perakendedeki Temel Kullanım Alanları</h3>
+        <p>AI, müşteri deneyimini kişiselleştirmekten stok yönetimine kadar birçok alanda devrim yaratıyor.</p>
+        <ul>
+          <li><strong>Akıllı Müşteri Deneyimi:</strong> Kişiselleştirilmiş öneriler.</li>
+          <li><strong>Tahmine Dayalı Stok Yönetimi:</strong> Gelecek talebi öngörme.</li>
+          <li><strong>Dinamik Fiyatlandırma:</strong> Rekabetçi fiyat stratejileri.</li>
+        </ul>
+        <p>Yapay zeka ile perakende operasyonlarınızı geleceğe taşıyın.</p>
+      ` : `
+        <h2>How AI is Transforming the Retail Industry</h2>
+        <p>Artificial Intelligence (AI) is no longer just science fiction - it has become an integral part of daily operations in the retail sector.</p>
+        <h3>Key Use Cases of AI in Retail</h3>
+        <p>AI is revolutionizing many areas from personalizing customer experience to inventory management.</p>
+        <ul>
+          <li><strong>Smart Customer Experience:</strong> Personalized recommendations.</li>
+          <li><strong>Predictive Inventory Management:</strong> Forecasting future demand.</li>
+          <li><strong>Dynamic Pricing:</strong> Competitive pricing strategies.</li>
+        </ul>
+        <p>Propel your retail operations into the future with Artificial Intelligence.</p>
+      `
+    },
+    {
+      id: '3',
+      title: t('blog.post3.title'),
+      excerpt: t('blog.post3.excerpt'),
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+      category: 'insights',
+      date: '2024-11-05',
+      readTime: '6 dk',
+      author: {
+        name: 'Mehmet Kaya',
+        avatar: '/avatars/mehmet.jpg',
+        bio: 'Müşteri Deneyimi Yöneticisi'
+      },
+      content: language === 'tr' ? `
+        <h2>Müşteri Davranış Paternlerini Anlamak</h2>
+        <p>Müşterilerinizin mağaza içindeki yolculuğunu anlamak, satışları artırmanın anahtarıdır. Isı haritaları ve yol analizi ile müşterilerin nerede durduğunu, nereye baktığını ve neden satın almadığını keşfedin.</p>
+        <h3>Davranış Analizinin Gücü</h3>
+        <p>Veri odaklı içgörüler, mağaza düzeninizi ve ürün yerleşiminizi optimize etmenize yardımcı olur.</p>
+        <ul>
+          <li><strong>Sıcak Bölgeler:</strong> Mağazanızın en çok ziyaret edilen alanlarını belirleyin.</li>
+          <li><strong>Dönüşüm Oranları:</strong> Ziyaretçilerin kaçı satın almaya dönüşüyor?</li>
+          <li><strong>Sadakat Programları:</strong> Müşterileri elde tutma stratejileri geliştirin.</li>
+        </ul>
+      ` : `
+        <h2>Understanding Customer Behavior Patterns</h2>
+        <p>Understanding your customers' journey inside the store is key to increasing sales. Discover where customers stop, look, and why they don't buy with heatmaps and path analysis.</p>
+        <h3>The Power of Behavior Analysis</h3>
+        <p>Data-driven insights help you optimize your store layout and product placement.</p>
+        <ul>
+          <li><strong>Hot Zones:</strong> Identify the most visited areas of your store.</li>
+          <li><strong>Conversion Rates:</strong> How many visitors convert to purchases?</li>
+          <li><strong>Loyalty Programs:</strong> Develop strategies to retain customers.</li>
+        </ul>
+      `
+    },
+    {
+      id: '4',
+      title: t('blog.post4.title'),
+      excerpt: t('blog.post4.excerpt'),
+      image: 'https://images.unsplash.com/photo-1532618793091-ec5fe9635f78?w=800&h=600&fit=crop',
+      category: 'optimization',
+      date: '2024-11-01',
+      readTime: '12 dk',
+      author: {
+        name: 'Zeynep Çelik',
+        avatar: '/avatars/zeynep.jpg',
+        bio: 'Mağaza Operasyonları Direktörü'
+      },
+      content: language === 'tr' ? `
+        <h2>Mağaza Yerleşimi Optimizasyon Rehberi</h2>
+        <p>Doğru mağaza yerleşimi, müşterilerin daha fazla ürün görmesini ve daha fazla satın almasını sağlar. Bilimsel verilerle mağaza trafiğini yönlendirin.</p>
+        <h3>Etkili Mağaza Düzeni İpuçları</h3>
+        <ul>
+          <li><strong>Giriş Alanı:</strong> İlk izlenim önemlidir. Ferah ve davetkar bir giriş tasarlayın.</li>
+          <li><strong>Sağ Taraf Kuralı:</strong> Müşteriler genellikle sağa yönelir. En popüler ürünleri buraya koyun.</li>
+          <li><strong>Görsel Odak Noktaları:</strong> Müşterilerin ilgisini çekecek görsel alanlar yaratın.</li>
+        </ul>
+      ` : `
+        <h2>Store Layout Optimization Guide</h2>
+        <p>The right store layout ensures customers see more products and buy more. Direct store traffic with scientific data.</p>
+        <h3>Effective Store Layout Tips</h3>
+        <ul>
+          <li><strong>Entrance Area:</strong> First impressions matter. Design a spacious and inviting entrance.</li>
+          <li><strong>Right Side Rule:</strong> Customers usually turn right. Place popular products here.</li>
+          <li><strong>Visual Focal Points:</strong> Create visual areas to attract customer interest.</li>
+        </ul>
+      `
+    },
+    {
+      id: '5',
+      title: t('blog.post5.title'),
+      excerpt: t('blog.post5.excerpt'),
+      image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop',
+      category: 'trends',
+      date: '2024-10-28',
+      readTime: '7 dk',
+      author: {
+        name: 'Can Yıldız',
+        avatar: '/avatars/can.jpg',
+        bio: 'Teknoloji Editörü'
+      },
+      content: language === 'tr' ? `
+        <h2>2024 Retail Teknoloji Trendleri</h2>
+        <p>Perakende dünyası hızla değişiyor. 2024 yılında öne çıkan teknoloji trendlerini ve işletmenize nasıl entegre edebileceğinizi inceledik.</p>
+        <h3>Öne Çıkan Trendler</h3>
+        <ul>
+          <li><strong>Temassız Ödeme Sistemleri:</strong> Hızlı ve güvenli ödeme deneyimi.</li>
+          <li><strong>Sanal Gerçeklik (VR) Mağazalar:</strong> Fiziksel ve dijital deneyimlerin birleşimi.</li>
+          <li><strong>Sürdürülebilirlik Odaklı Teknolojiler:</strong> Çevre dostu operasyonlar için akıllı çözümler.</li>
+        </ul>
+      ` : `
+        <h2>2024 Retail Technology Trends</h2>
+        <p>The retail world is changing rapidly. We examined the technology trends standing out in 2024 and how you can integrate them into your business.</p>
+        <h3>Featured Trends</h3>
+        <ul>
+          <li><strong>Contactless Payment Systems:</strong> Fast and secure payment experience.</li>
+          <li><strong>Virtual Reality (VR) Stores:</strong> Convergence of physical and digital experiences.</li>
+          <li><strong>Sustainability-Focused Technologies:</strong> Smart solutions for eco-friendly operations.</li>
+        </ul>
+      `
+    },
+    {
+      id: '6',
+      title: t('blog.post6.title'),
+      excerpt: t('blog.post6.excerpt'),
+      image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop',
+      category: 'security',
+      date: '2024-10-25',
+      readTime: '9 dk',
+      author: {
+        name: 'Elif Öztürk',
+        avatar: '/avatars/elif.jpg',
+        bio: 'Veri Güvenliği Uzmanı'
+      },
+      content: language === 'tr' ? `
+        <h2>Retail Analitikte Gizlilik ve Güvenlik</h2>
+        <p>Müşteri verilerini toplarken KVKK ve GDPR uyumluluğu hayati önem taşır. Veri güvenliğini sağlarken iş içgörüleri elde etmenin yolları.</p>
+        <h3>Veri Güvenliği En İyi Uygulamaları</h3>
+        <ul>
+          <li><strong>Anonimleştirme:</strong> Kişisel verileri kimliksizleştirerek analiz etme.</li>
+          <li><strong>Şifreleme:</strong> Verilerin güvenli bir şekilde saklanması ve iletilmesi.</li>
+          <li><strong>Şeffaflık:</strong> Müşterilere hangi verilerin toplandığını açıkça bildirme.</li>
+        </ul>
+      ` : `
+        <h2>Privacy and Security in Retail Analytics</h2>
+        <p>GDPR and KVKK compliance is vital when collecting customer data. Ways to gain business insights while ensuring data security.</p>
+        <h3>Data Security Best Practices</h3>
+        <ul>
+          <li><strong>Anonymization:</strong> Analyzing personal data by de-identifying it.</li>
+          <li><strong>Encryption:</strong> Secure storage and transmission of data.</li>
+          <li><strong>Transparency:</strong> Clearly informing customers about what data is collected.</li>
+        </ul>
+      `
     }
   ];
 
@@ -152,12 +227,12 @@ const BlogDetailPage = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-slate-900 mb-4">Blog yazısı bulunamadı</h1>
+          <h1 className="text-4xl font-bold text-slate-900 mb-4">{language === 'tr' ? 'Blog yazısı bulunamadı' : 'Blog post not found'}</h1>
           <button
-            onClick={() => navigate('/#blog')}
+            onClick={() => navigate('/blog')}
             className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700"
           >
-            Blog'a Dön
+            {language === 'tr' ? 'Blog\'a Dön' : 'Back to Blog'}
           </button>
         </div>
       </div>
@@ -177,7 +252,7 @@ const BlogDetailPage = () => {
 
     if (platform === 'copy') {
       navigator.clipboard.writeText(shareUrl);
-      alert('Link kopyalandı!');
+      alert(language === 'tr' ? 'Link kopyalandı!' : 'Link copied!');
     } else {
       window.open(urls[platform as keyof typeof urls], '_blank', 'width=600,height=400');
     }
@@ -200,11 +275,11 @@ const BlogDetailPage = () => {
       <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-16 -mt-32 relative z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <button
-            onClick={() => navigate('/#blog')}
+            onClick={() => navigate('/blog')}
             className="flex items-center gap-2 text-white/80 hover:text-white mb-8 transition-colors"
           >
             <ArrowLeft className="w-5 h-5" />
-            Blog'a Dön
+            {language === 'tr' ? 'Blog\'a Dön' : 'Back to Blog'}
           </button>
 
           <div className="mb-6">
@@ -220,7 +295,7 @@ const BlogDetailPage = () => {
           <div className="flex flex-wrap items-center gap-6 text-white/80">
             <div className="flex items-center gap-2">
               <Calendar className="w-5 h-5" />
-              <span>{new Date(post.date).toLocaleDateString('tr-TR')}</span>
+              <span>{new Date(post.date).toLocaleDateString(language === 'tr' ? 'tr-TR' : 'en-US')}</span>
             </div>
             <div className="flex items-center gap-2">
               <Clock className="w-5 h-5" />
@@ -298,9 +373,9 @@ const BlogDetailPage = () => {
 
         {/* Related Posts */}
         <div className="mt-16">
-          <h2 className="text-3xl font-bold text-slate-900 mb-8">İlgili Yazılar</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-8">{language === 'tr' ? 'İlgili Yazılar' : 'Related Posts'}</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            {blogPosts.slice(0, 2).map(relatedPost => (
+            {blogPosts.filter(p => p.id !== id).slice(0, 2).map(relatedPost => (
               <div
                 key={relatedPost.id}
                 onClick={() => navigate(`/blog/${relatedPost.id}`)}
