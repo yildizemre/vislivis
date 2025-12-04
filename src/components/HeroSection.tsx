@@ -23,6 +23,15 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a] via-[#0f172a]/90 to-transparent"></div>
       </div>
 
+      {/* Grid Pattern */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                           linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
+        }}></div>
+      </div>
+
       {/* Content Container */}
       <div className="container mx-auto px-6 relative z-10 pt-20 lg:pt-0">
         <div className="grid lg:grid-cols-12 gap-12 items-center min-h-[calc(100vh-80px)]">

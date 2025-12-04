@@ -21,7 +21,7 @@ const Footer = () => {
   const companyLinks = [
     { key: 'footer.company.about', href: '/hakkimizda', internal: true },
     { key: 'footer.company.careers', href: '#' },
-    { key: 'footer.company.blog', href: '#' },
+    { key: 'footer.company.blog', href: '/blog', internal: true },
     { key: 'footer.company.partners', href: '#' }
   ];
 
@@ -128,7 +128,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-8 pb-8">
           <div className="text-center mb-6">
             <h3 className="text-lg font-bold text-white mb-2">
-              {t('footer.certifications') || 'Sertifikalarımız'}
+              {t('footer.certifications')}
             </h3>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-8">

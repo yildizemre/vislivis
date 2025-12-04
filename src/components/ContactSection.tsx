@@ -20,14 +20,14 @@ const ContactSection = () => {
     
     // Validasyon
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
-      setFeedback('Lütfen tüm zorunlu alanları doldurunuz.');
+      setFeedback(t('contact.form.validation.required'));
       return;
     }
     
     // Email format kontrolü
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      setFeedback('Lütfen geçerli bir email adresi giriniz.');
+      setFeedback(t('contact.form.validation.email'));
       return;
     }
     
@@ -43,7 +43,7 @@ const ContactSection = () => {
       });
       
       if (!res.ok) {
-        let msg = 'Gönderim başarısız';
+        let msg = t('contact.form.error.submit');
         try {
           const data = await res.json();
           msg = data?.message || data?.error || msg;
@@ -55,7 +55,7 @@ const ContactSection = () => {
       setShowSuccess(true);
       setTimeout(() => setShowSuccess(false), 5000);
     } catch (err) {
-      setFeedback((err as Error).message || 'Bir hata oluştu. Lütfen tekrar deneyin.');
+      setFeedback((err as Error).message || t('contact.form.error.generic'));
     } finally {
       setSubmitting(false);
     }
@@ -73,8 +73,8 @@ const ContactSection = () => {
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-100">
         <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                           linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                           linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px)`,
           backgroundSize: '60px 60px'
         }}></div>
       </div>
@@ -259,10 +259,10 @@ const ContactSection = () => {
                   {submitting ? (
                     <>
                       <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
-                      Gönderiliyor…
+                      {t('contact.form.sending')}
                     </>
                   ) : (
                     <>
@@ -305,13 +305,13 @@ const ContactSection = () => {
                   <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-300">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h4 className="text-2xl font-bold tracking-tight">Mesajınız alındı</h4>
-                  <p className="text-white/90">En kısa sürede sizinle iletişime geçeceğiz.</p>
+                  <h4 className="text-2xl font-bold tracking-tight">{t('contact.success.title')}</h4>
+                  <p className="text-white/90">{t('contact.success.message')}</p>
                   <button
                     onClick={() => setShowSuccess(false)}
                     className="mt-2 inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[#00cadc] hover:bg-cyan-500 text-gray-900 font-semibold transition-colors"
                   >
-                    Tamam
+                    {t('contact.success.button')}
                   </button>
                 </div>
               </div>

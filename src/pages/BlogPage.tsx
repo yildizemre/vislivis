@@ -35,12 +35,77 @@ const BlogPage = () => {
         avatar: '/avatars/ayse.jpg',
         bio: 'AI & Machine Learning Uzmanı'
       }
+    },
+    {
+      id: '3',
+      title: t('blog.post3.title'),
+      excerpt: t('blog.post3.excerpt'),
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+      category: 'insights',
+      date: '2024-11-05',
+      readTime: '6 dk',
+      author: {
+        name: 'Mehmet Kaya',
+        avatar: '/avatars/mehmet.jpg',
+        bio: 'Müşteri Deneyimi Yöneticisi'
+      }
+    },
+    {
+      id: '4',
+      title: t('blog.post4.title'),
+      excerpt: t('blog.post4.excerpt'),
+      image: 'https://images.unsplash.com/photo-1532618793091-ec5fe9635f78?w=800&h=600&fit=crop',
+      category: 'optimization',
+      date: '2024-11-01',
+      readTime: '12 dk',
+      author: {
+        name: 'Zeynep Çelik',
+        avatar: '/avatars/zeynep.jpg',
+        bio: 'Mağaza Operasyonları Direktörü'
+      }
+    },
+    {
+      id: '5',
+      title: t('blog.post5.title'),
+      excerpt: t('blog.post5.excerpt'),
+      image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop',
+      category: 'trends',
+      date: '2024-10-28',
+      readTime: '7 dk',
+      author: {
+        name: 'Can Yıldız',
+        avatar: '/avatars/can.jpg',
+        bio: 'Teknoloji Editörü'
+      }
+    },
+    {
+      id: '6',
+      title: t('blog.post6.title'),
+      excerpt: t('blog.post6.excerpt'),
+      image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop',
+      category: 'security',
+      date: '2024-10-25',
+      readTime: '9 dk',
+      author: {
+        name: 'Elif Öztürk',
+        avatar: '/avatars/elif.jpg',
+        bio: 'Veri Güvenliği Uzmanı'
+      }
     }
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 pt-32 pb-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-slate-50 pt-32 pb-24 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-100 pointer-events-none">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `linear-gradient(to right, rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+                           linear-gradient(to bottom, rgba(15, 23, 42, 0.02) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
+        }}></div>
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-blue-50 border border-blue-100 rounded-full text-blue-700 text-sm font-medium mb-6">
             {t('blog.badge')}

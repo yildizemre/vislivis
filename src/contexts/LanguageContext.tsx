@@ -346,6 +346,15 @@ const translations: Record<Language, TranslationDict> = {
 
     // Contact
     'contact.title': 'Get Started Today',
+    'contact.form.validation.required': 'Please fill in all required fields.',
+    'contact.form.validation.email': 'Please enter a valid email address.',
+    'contact.form.error.submit': 'Submission failed',
+    'contact.form.error.generic': 'An error occurred. Please try again.',
+    'contact.form.sending': 'Sending...',
+    'contact.success.title': 'Message Received',
+    'contact.success.message': 'We will contact you as soon as possible.',
+    'contact.success.button': 'OK',
+    'footer.certifications': 'Certifications',
     'contact.subtitle': 'Ready to transform your retail operations? Contact us for a personalized demo.',
     'contact.badge': 'Get in Touch',
     'contact.getInTouch': 'Get in Touch',
@@ -883,6 +892,15 @@ const translations: Record<Language, TranslationDict> = {
 
     // Contact
     'contact.title': 'Bugün Başlayın',
+    'contact.form.validation.required': 'Lütfen tüm zorunlu alanları doldurunuz.',
+    'contact.form.validation.email': 'Lütfen geçerli bir email adresi giriniz.',
+    'contact.form.error.submit': 'Gönderim başarısız',
+    'contact.form.error.generic': 'Bir hata oluştu. Lütfen tekrar deneyin.',
+    'contact.form.sending': 'Gönderiliyor…',
+    'contact.success.title': 'Mesajınız alındı',
+    'contact.success.message': 'En kısa sürede sizinle iletişime geçeceğiz.',
+    'contact.success.button': 'Tamam',
+    'footer.certifications': 'Sertifikalarımız',
     'contact.subtitle': 'Retail operasyonlarınızı dönüştürmeye hazır mısınız? Kişiselleştirilmiş demo için bizimle iletişime geçin.',
     'contact.badge': 'İletişim Kurun',
     'contact.getInTouch': 'İletişime Geçin',

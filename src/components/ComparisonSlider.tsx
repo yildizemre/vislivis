@@ -52,7 +52,7 @@ const ComparisonSlider = () => {
             {/* Common Layout Structure for perfect alignment */}
             {/* Before Image (Without AI) */}
             <div className="absolute inset-0 bg-slate-50">
-              <div className="absolute inset-0 opacity-10" style={{
+              <div className="absolute inset-0 opacity-5" style={{
                 backgroundImage: 'radial-gradient(#000 1px, transparent 1px)',
                 backgroundSize: '24px 24px'
               }}></div>
